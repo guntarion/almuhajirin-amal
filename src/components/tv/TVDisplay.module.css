@@ -9,7 +9,7 @@
 }
 
 .header {
-  background-color: #059669; /* bg-green-600 */
+  background: linear-gradient(to right, #0d6e7c, #15b9c9); /* Turquoise/teal gradient to match logo */
   color: white;
   padding-top: 1rem; /* py-4 */
   padding-bottom: 1rem;
@@ -25,6 +25,27 @@
   align-items: center;
   padding-left: 2rem; /* px-8 */
   padding-right: 2rem;
+}
+
+.headerTitleContainer {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* gap-6 */
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  border-radius: 50%; /* rounded-full */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+}
+
+.titleWrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 .headerTitle {
@@ -54,7 +75,7 @@
 
 .dayBadge {
   margin-top: 0.5rem; /* mt-2 */
-  background-color: #047857; /* bg-green-700 */
+  background-color: rgba(255, 255, 255, 0.2); /* semi-transparent white */
   padding-left: 1rem; /* px-4 */
   padding-right: 1rem;
   padding-top: 0.25rem; /* py-1 */
@@ -210,7 +231,7 @@
 }
 
 .gradientBg {
-  background: linear-gradient(90deg, #10b981, #3b82f6, #10b981);
+  background: linear-gradient(90deg, #0d6e7c, #15b9c9, #0d6e7c); /* Updated to teal colors to match logo */
   background-size: 200% 200%;
   animation: gradientFlow 15s ease infinite;
 }

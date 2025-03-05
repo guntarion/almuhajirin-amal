@@ -42,8 +42,18 @@
 }
 
 .detailButton {
-  margin-left: 0.5rem; /* ml-2 */
-  font-size: 0.875rem; /* text-sm */
+  margin-left: 0.75rem; /* ml-3 */
+  padding: 0.375rem 0.75rem; /* py-1.5 px-3 */
+  font-size: 0.75rem; /* text-xs */
   font-weight: 500; /* font-medium */
   color: #059669; /* text-green-600 */
+  background-color: #ecfdf5; /* bg-green-50 */
+  border: 1px solid #d1fae5; /* border border-green-100 */
+  border-radius: 0.25rem; /* rounded */
+  transition: all 0.2s ease;
+}
+
+.detailButton:hover {
+  background-color: #d1fae5; /* bg-green-100 */
+  color: #047857; /* text-green-700 */
 }

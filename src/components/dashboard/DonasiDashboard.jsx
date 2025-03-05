@@ -3,7 +3,8 @@
 // Komponen utama dashboard donasi
 // Digunakan di halaman dashboard
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { CalendarDays } from 'lucide-react';
 import TerimaKasihWidget from './TerimaKasihWidget';
@@ -12,6 +13,7 @@ import InfaqCard from './InfaqCard';
 import KPIWidget from './KPIWidget';
 import DonasiDetailView from './DonasiDetailView';
 import InfaqDetailView from './InfaqDetailView';
+import ProposalView from './ProposalView';
 import DashboardFooter from './DashboardFooter';
 
 import { takjilData, sahurData, snackData, infaqData, overviewChartData, formatCurrency } from '@/data/programs';
@@ -22,6 +24,14 @@ const DonasiDashboard = () => {
   // State untuk kontrol UI
   const [activeTab, setActiveTab] = useState('overview');
   const [currentDay] = useState(dashboardConfig.currentDay);
+  const [date, setDate] = useState('');
+
+  // Effect untuk mendapatkan tanggal hari ini
+  useEffect(() => {
+    const today = new Date();
+    const options = { day: 'numeric', month: 'long', year: 'numeric' };
+    setDate(today.toLocaleDateString('id-ID', options));
+  }, []);
 
   // Menghitung total donasi dari takjil dan sahur (dalam porsi)
   const hitungTotalDonasiPorsi = () => {
@@ -66,16 +76,22 @@ const DonasiDashboard = () => {
       <div className={styles.header}>
         <div className={styles.headerContent}>
           <div className={styles.headerInfo}>
-            <h1 className={styles.title}>Dashboard Donasi Ramadhan</h1>
-            <p className={styles.subtitle}>
-              {dashboardConfig.masjidName} • Ramadhan {dashboardConfig.tahunHijriah}
-            </p>
+            {/* Logo */}
+            <div className={styles.logoContainer}>
+              <Image src='/logo-yamr.png' alt='Al Muhajirin' width={80} height={80} className={styles.logo} />
+            </div>
+
+            <h1 className={styles.title}>Donasi Ramadhan {dashboardConfig.masjidName}</h1>
+
             <div className={styles.dayBadge}>
               <div className={styles.dayBadgeContent}>
                 <CalendarDays className={styles.dayIcon} />
-                <span>Hari ke-{currentDay} Ramadhan</span>
+                <span className={styles.dayText}>Hari ke-{currentDay} Ramadhan</span>
               </div>
             </div>
+            <p className={styles.subtitle}>
+              {date} • Ramadhan {dashboardConfig.tahunHijriah}
+            </p>
           </div>
         </div>
       </div>
@@ -84,36 +100,48 @@ const DonasiDashboard = () => {
       <div className={styles.navigation}>
         <div className={styles.navContainer}>
           <div className={styles.navContent}>
-            <button
-              className={`${styles.navButton} ${activeTab === 'overview' ? styles.navButtonActive : styles.navButtonInactive}`}
-              onClick={() => setActiveTab('overview')}
-            >
-              Overview
-            </button>
-            <button
-              className={`${styles.navButton} ${activeTab === 'takjil' ? styles.navButtonActive : styles.navButtonInactive}`}
-              onClick={() => setActiveTab('takjil')}
-            >
-              Ifthar
-            </button>
-            <button
-              className={`${styles.navButton} ${activeTab === 'sahur' ? styles.navButtonActive : styles.navButtonInactive}`}
-              onClick={() => setActiveTab('sahur')}
-            >
-              Qiyamul Lail
-            </button>
-            <button
-              className={`${styles.navButton} ${activeTab === 'snack' ? styles.navButtonActive : styles.navButtonInactive}`}
-              onClick={() => setActiveTab('snack')}
-            >
-              Tadarrus
-            </button>
-            <button
-              className={`${styles.navButton} ${activeTab === 'infaq' ? styles.navButtonActive : styles.navButtonInactive}`}
-              onClick={() => setActiveTab('infaq')}
-            >
-              Infaq
-            </button>
+            <div className={styles.leftNavGroup}>
+              <button
+                className={`${styles.navButton} ${activeTab === 'overview' ? styles.navButtonActive : styles.navButtonInactive}`}
+                onClick={() => setActiveTab('overview')}
+              >
+                Overview
+              </button>
+              <button
+                className={`${styles.navButton} ${activeTab === 'takjil' ? styles.navButtonActive : styles.navButtonInactive}`}
+                onClick={() => setActiveTab('takjil')}
+              >
+                Ifthar
+              </button>
+              <button
+                className={`${styles.navButton} ${activeTab === 'sahur' ? styles.navButtonActive : styles.navButtonInactive}`}
+                onClick={() => setActiveTab('sahur')}
+              >
+                Qiyamul Lail
+              </button>
+              <button
+                className={`${styles.navButton} ${activeTab === 'snack' ? styles.navButtonActive : styles.navButtonInactive}`}
+                onClick={() => setActiveTab('snack')}
+              >
+                Tadarrus
+              </button>
+              <button
+                className={`${styles.navButton} ${activeTab === 'infaq' ? styles.navButtonActive : styles.navButtonInactive}`}
+                onClick={() => setActiveTab('infaq')}
+              >
+                Infaq
+              </button>
+            </div>
+            <div className={styles.rightNavGroup}>
+              <button
+                className={`${styles.navButton} ${styles.proposalButton} ${
+                  activeTab === 'proposal' ? styles.navButtonActive : styles.navButtonInactive
+                }`}
+                onClick={() => setActiveTab('proposal')}
+              >
+                Proposal
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -181,6 +209,9 @@ const DonasiDashboard = () => {
 
         {/* Infaq Detail */}
         {activeTab === 'infaq' && <InfaqDetailView infaqData={infaqData} />}
+
+        {/* Proposal View */}
+        {activeTab === 'proposal' && <ProposalView />}
       </div>
 
       {/* Footer */}

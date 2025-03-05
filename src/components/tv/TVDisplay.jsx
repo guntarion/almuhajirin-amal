@@ -4,6 +4,7 @@
 // Tampilan untuk layar TV Masjid (16:9)
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { Heart, Star, Gift, Calendar, CreditCard, Phone } from 'lucide-react';
 import TVTerimaKasihWidget from './TVTerimaKasihWidget';
 import TVDonaturTerkini from './TVDonaturTerkini';
@@ -87,11 +88,17 @@ const TVDisplay = () => {
       {/* Header */}
       <div className={styles.header}>
         <div className={styles.headerContent}>
-          <div>
-            <h1 className={styles.headerTitle}>Dashboard Donasi Ramadhan</h1>
-            <h2 className={styles.headerSubtitle}>
-              {tvDisplayConfig.masjidName} • Ramadhan {tvDisplayConfig.tahunHijriah}
-            </h2>
+          <div className={styles.headerTitleContainer}>
+            {/* Logo */}
+            <div className={styles.logoContainer}>
+              <Image src='/logo-yamr.png' alt='Al Muhajirin' width={90} height={90} className={styles.logo} />
+            </div>
+            <div className={styles.titleWrapper}>
+              <h1 className={styles.headerTitle}>Dashboard Donasi Ramadhan</h1>
+              <h2 className={styles.headerSubtitle}>
+                {tvDisplayConfig.masjidName} • Ramadhan {tvDisplayConfig.tahunHijriah}
+              </h2>
+            </div>
           </div>
           <div className={styles.timeContainer}>
             <div className={styles.time}>{time}</div>

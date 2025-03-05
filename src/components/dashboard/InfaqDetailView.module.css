@@ -70,16 +70,20 @@
 .itemsList {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem; /* space-y-2 */
+  /* Removed gap to allow borders to create separation */
 }
 
 .item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem; /* p-2 */
-  border-bottom-width: 1px; /* border-b */
-  border-color: #e5e7eb; /* border-gray-200 */
+  padding: 0.75rem 0.5rem; /* py-3 px-2 */
+  border-bottom: 1px solid #e5e7eb; /* Making sure border is visible */
+}
+
+/* Add this class to remove border from the last item if needed */
+.item:last-child {
+  border-bottom: none;
 }
 
 .dayLabel {

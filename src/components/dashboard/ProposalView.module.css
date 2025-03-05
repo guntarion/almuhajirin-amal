@@ -1,0 +1,338 @@
+/* src/components/dashboard/ProposalView.module.css */
+/* CSS Module for ProposalView component */
+
+.container {
+  background-color: white;
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* shadow */
+  overflow: hidden;
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+
+.header {
+  padding: 1.25rem; /* p-5 */
+  border-bottom: 1px solid #e5e7eb; /* border-b border-gray-200 */
+  background-color: #f1f5f9; /* bg-slate-100 */
+}
+
+.title {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 700; /* font-bold */
+  color: #111827; /* text-gray-900 */
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+.tabs {
+  display: flex;
+  gap: 0.5rem; /* gap-2 */
+}
+
+.tabButton {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem; /* px-4 py-2 */
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500; /* font-medium */
+  border-radius: 0.375rem; /* rounded-md */
+  color: #4b5563; /* text-gray-600 */
+  background-color: white;
+  border: 1px solid #e5e7eb; /* border border-gray-200 */
+  transition: all 0.2s;
+}
+
+.tabButton:hover {
+  background-color: #f9fafb; /* bg-gray-50 */
+}
+
+.activeTab {
+  color: #0d9488; /* text-teal-600 */
+  background-color: rgba(13, 148, 136, 0.1); /* bg-teal-600/10 */
+  border-color: #14b8a6; /* border-teal-500 */
+}
+
+.tabIcon {
+  width: 1rem; /* w-4 */
+  height: 1rem; /* h-4 */
+  margin-right: 0.5rem; /* mr-2 */
+}
+
+.content {
+  padding: 1.5rem; /* p-6 */
+  background-color: #f9fafb; /* bg-gray-50 */
+  min-height: 60vh; /* minimum height */
+}
+
+.proposalContent {
+  max-width: 65rem; /* max-w-4xl */
+  margin: 0 auto;
+}
+
+.introSection {
+  background-color: white;
+  padding: 1.5rem; /* p-6 */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1); /* shadow-sm */
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+
+.introText {
+  font-size: 1rem; /* text-base */
+  color: #374151; /* text-gray-700 */
+  line-height: 1.625; /* leading-relaxed */
+  margin-bottom: 1.5rem; /* mb-6 */
+  text-align: justify;
+}
+
+.sectionTitle {
+  font-weight: 600; /* font-semibold */
+  margin-bottom: 0; /* mb-0 */
+  color: #111827; /* text-gray-900 */
+}
+
+/* Ketua Panitia Section */
+.ketuaSection {
+  background-color: white;
+  padding: 1.5rem; /* p-6 */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1); /* shadow-sm */
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+
+.ketuaInfo {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem; /* gap-6 */
+}
+
+.photoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 150px;
+}
+
+.ketuaPhoto {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%; /* rounded-full */
+  object-fit: cover;
+  border: 3px solid #0d9488; /* border-teal-600 */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+}
+
+.photoCaption {
+  margin-top: 0.75rem; /* mt-3 */
+  text-align: center;
+}
+
+.captionTitle {
+  font-size: 0.75rem; /* text-xs */
+  color: #6b7280; /* text-gray-500 */
+  margin-bottom: 0.25rem; /* mb-1 */
+}
+
+.captionName {
+  font-weight: 600; /* font-semibold */
+  color: #111827; /* text-gray-900 */
+  font-size: 0.875rem; /* text-sm */
+}
+
+.speechBubble {
+  position: relative;
+  background-color: #ecfdf5; /* bg-green-50 */
+  border: 1px solid #a7f3d0; /* border-green-200 */
+  padding: 1rem; /* p-4 */
+  border-radius: 0.75rem; /* rounded-xl */
+  flex: 1;
+}
+
+.speechBubble:before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 30px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-right: 10px solid #a7f3d0; /* border-green-200 */
+  border-bottom: 10px solid transparent;
+}
+
+.speechBubble:after {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 30px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-right: 10px solid #ecfdf5; /* bg-green-50 */
+  border-bottom: 10px solid transparent;
+}
+
+.speechText {
+  color: #065f46; /* text-green-800 */
+  font-size: 1rem; /* text-base */
+  line-height: 1.625; /* leading-relaxed */
+  font-style: italic;
+  text-align: justify;
+}
+
+.programContainer {
+  background-color: white;
+  padding: 1.5rem; /* p-6 */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1); /* shadow-sm */
+}
+
+.programSection {
+  margin-bottom: 1.25rem; /* mb-5 */
+  border-bottom: 1px solid #f3f4f6; /* border-b border-gray-100 */
+  padding-bottom: 1rem; /* pb-4 */
+}
+
+.programTitleNumbered {
+  font-weight: 600; /* font-semibold */
+  color: #111827; /* text-gray-900 */
+  margin-bottom: 0.5rem; /* mb-2 */
+  display: flex;
+  align-items: start;
+}
+
+.programNumber {
+  min-width: 1.5rem; /* w-6 */
+  margin-right: 0.5rem; /* mr-2 */
+  display: inline-block;
+  color: #0d9488; /* text-teal-600 */
+  font-weight: 700; /* font-bold */
+}
+
+.subprogramList {
+  list-style-type: none;
+  padding-left: 2rem; /* pl-8 */
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+.subprogramList li {
+  margin-bottom: 0.5rem; /* mb-2 */
+  color: #4b5563; /* text-gray-600 */
+  display: flex;
+  align-items: center;
+}
+
+.bulletPoint {
+  min-width: 1.5rem; /* w-6 */
+  color: #0d9488; /* text-teal-600 */
+  font-weight: 600; /* font-semibold */
+}
+
+.programList {
+  display: flex;
+  flex-direction: column;
+}
+
+.programItem {
+  padding: 0.5rem 0; /* py-2 */
+  border-bottom: 1px solid #f3f4f6; /* border-b border-gray-100 */
+}
+
+.programItem:last-child {
+  border-bottom: none;
+}
+
+.budgetContent {
+  max-width: 65rem; /* max-w-4xl */
+  margin: 0 auto;
+  background-color: white;
+  padding: 1.5rem; /* p-6 */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1); /* shadow-sm */
+}
+
+.budgetTitle {
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 600; /* font-semibold */
+  margin-bottom: 1.5rem; /* mb-6 */
+  color: #111827; /* text-gray-900 */
+  text-align: center;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10rem; /* h-40 */
+  color: #6b7280; /* text-gray-500 */
+}
+
+.tableContainer {
+  overflow-x: auto;
+}
+
+.budgetTable {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #e5e7eb; /* border border-gray-200 */
+}
+
+.budgetTable th {
+  background-color: #0d9488; /* bg-teal-600 */
+  padding: 0.75rem 1rem; /* px-4 py-3 */
+  font-weight: 600; /* font-semibold */
+  text-align: left;
+  color: white; /* text-white */
+  border-bottom: 2px solid #e5e7eb; /* border-b-2 border-gray-200 */
+}
+
+.nameColumn {
+  width: 65%;
+}
+
+.amountColumn {
+  width: 35%;
+}
+
+.budgetTable td {
+  padding: 0.75rem 1rem; /* px-4 py-3 */
+  border-bottom: 1px solid #e5e7eb; /* border-b border-gray-200 */
+}
+
+.nameCell {
+  color: #374151; /* text-gray-700 */
+}
+
+.amountCell {
+  color: #047857; /* text-green-700 */
+  font-weight: 500; /* font-medium */
+  text-align: right;
+}
+
+.evenRow {
+  background-color: #ffffff;
+}
+
+.oddRow {
+  background-color: #f9fafb; /* bg-gray-50 */
+}
+
+@media (max-width: 768px) {
+  .tabs {
+    flex-direction: column;
+  }
+
+  .ketuaInfo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .speechBubble:before,
+  .speechBubble:after {
+    display: none;
+  }
+
+  .budgetTable th,
+  .budgetTable td {
+    padding: 0.5rem; /* p-2 */
+    font-size: 0.875rem; /* text-sm */
+  }
+}

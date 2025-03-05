@@ -1,0 +1,52 @@
+src
+├── app
+│   ├── dashboard
+│   │   └── page.js
+│   ├── favicon.ico
+│   ├── globals.css
+│   ├── layout.js
+│   ├── page.js
+│   └── tv
+│       └── page.js
+├── components
+│   ├── dashboard
+│   │   ├── DashboardFooter.jsx
+│   │   ├── DashboardFooter.module.css
+│   │   ├── DonasiDashboard.jsx
+│   │   ├── DonasiDashboard.module.css
+│   │   ├── DonasiDetailView.jsx
+│   │   ├── DonasiDetailView.module.css
+│   │   ├── InfaqCard.jsx
+│   │   ├── InfaqCard.module.css
+│   │   ├── InfaqDetailView.jsx
+│   │   ├── InfaqDetailView.module.css
+│   │   ├── KPIWidget.jsx
+│   │   ├── KPIWidget.module.css
+│   │   ├── ProgramCard.jsx
+│   │   ├── ProgramCard.module.css
+│   │   ├── TerimaKasihWidget.jsx
+│   │   └── TerimaKasihWidget.module.css
+│   └── tv
+│       ├── InfaqHarianDinamis.jsx
+│       ├── InfaqHarianDinamis.module.css
+│       ├── TVAjakanDonasi.jsx
+│       ├── TVAjakanDonasi.module.css
+│       ├── TVDisplay.jsx
+│       ├── TVDisplay.module.css
+│       ├── TVDonaturTerkini.jsx
+│       ├── TVDonaturTerkini.module.css
+│       ├── TVInfaqHarianChart.jsx
+│       ├── TVInfaqHarianChart.module.css
+│       ├── TVProgresDonasiWidget.jsx
+│       ├── TVProgresDonasiWidget.module.css
+│       ├── TVTerimaKasihWidget.jsx
+│       └── TVTerimaKasihWidget.module.css
+└── data
+    ├── dashboardConfig.js
+    ├── donatur.js
+    ├── infaq.js
+    ├── programs.js
+    ├── tvConfig.js
+    └── ucapan.js
+
+8 directories, 42 files

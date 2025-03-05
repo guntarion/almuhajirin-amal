@@ -10,6 +10,9 @@ import { formatCurrency } from '@/data/programs';
 import styles from './InfaqDetailView.module.css';
 
 const InfaqDetailView = ({ infaqData }) => {
+  // Define gradient colors for the chart
+  const gradientId = 'greenYellowGradient';
+
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -30,11 +33,17 @@ const InfaqDetailView = ({ infaqData }) => {
           <div className={styles.chartContainer}>
             <ResponsiveContainer width='100%' height='100%'>
               <BarChart data={infaqData.chartData}>
+                <defs>
+                  <linearGradient id={gradientId} x1='0' y1='0' x2='0' y2='1'>
+                    <stop offset='0%' stopColor='#4ade80' stopOpacity={0.9} /> {/* Soft green */}
+                    <stop offset='100%' stopColor='#fef08a' stopOpacity={0.9} /> {/* Soft yellow */}
+                  </linearGradient>
+                </defs>
                 <CartesianGrid strokeDasharray='3 3' />
                 <XAxis dataKey='hari' tick={{ fontSize: 10 }} />
                 <YAxis tick={{ fontSize: 10 }} tickFormatter={(value) => `${value / 1000000}jt`} />
                 <Tooltip formatter={(value) => formatCurrency(value)} />
-                <Bar dataKey='jumlah' name='Jumlah Infaq' fill={infaqData.color} />
+                <Bar dataKey='jumlah' name='Jumlah Infaq' fill={`url(#${gradientId})`} radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
