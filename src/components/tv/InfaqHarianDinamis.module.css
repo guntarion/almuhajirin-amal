@@ -1,0 +1,60 @@
+/* src/components/tv/InfaqHarianDinamis.module.css */
+/* CSS Module for InfaqHarianDinamis component */
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dayContainer {
+  display: flex;
+  align-items: center;
+}
+
+.dayBadge {
+  width: 3rem; /* w-12 */
+  height: 3rem; /* h-12 */
+  border-radius: 9999px; /* rounded-full */
+  background-color: #d1fae5; /* bg-green-100 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #059669; /* text-green-600 */
+  font-weight: 700; /* font-bold */
+  font-size: 1.25rem; /* text-xl */
+}
+
+.dayInfo {
+  margin-left: 0.75rem; /* ml-3 */
+}
+
+.dayLabel {
+  color: #6b7280; /* text-gray-500 */
+  font-size: 1.125rem; /* text-lg */
+}
+
+.dayAmount {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 700; /* font-bold */
+}
+
+.dotsContainer {
+  display: flex;
+  gap: 0.25rem; /* space-x-1 */
+}
+
+.dot {
+  display: block;
+  height: 0.5rem; /* h-2 */
+  width: 0.5rem; /* w-2 */
+  border-radius: 9999px; /* rounded-full */
+}
+
+.activeDot {
+  background-color: #059669; /* bg-green-600 */
+}
+
+.inactiveDot {
+  background-color: #d1d5db; /* bg-gray-300 */
+}

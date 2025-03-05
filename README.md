@@ -1,36 +1,136 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Almuhajirin Amal - Dashboard Donasi Ramadhan
 
-## Getting Started
+Aplikasi ini merupakan dashboard donasi untuk Masjid Al Muhajirin Rewwin selama bulan Ramadhan. Aplikasi dibuat dengan Next.js dan Tailwind CSS, dengan fokus pada kemudahan penggunaan dan tampilan yang menarik.
 
-First, run the development server:
+## Fitur Utama
+
+1. **Dashboard Donasi** - Tampilan mobile-friendly untuk pengguna umum
+2. **TV Display** - Tampilan khusus untuk layar TV Masjid dengan ratio 16:9
+
+## Cara Menjalankan Aplikasi
+
+### Prasyarat
+
+- Node.js versi 18.0.0 atau lebih baru
+- npm atau yarn
+
+### Langkah Instalasi
+
+1. Clone repository ini
+
+   ```bash
+   git clone https://github.com/username/almuhajirin-amal.git
+   cd almuhajirin-amal
+   ```
+
+2. Install dependensi
+
+   ```bash
+   npm install
+   # atau
+   yarn install
+   ```
+
+3. Jalankan aplikasi dalam mode development
+
+   ```bash
+   npm run dev
+   # atau
+   yarn dev
+   ```
+
+4. Buka browser dan akses:
+   - Dashboard: http://localhost:3000/dashboard
+   - TV Display: http://localhost:3000/tv
+
+### Build untuk Production
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
+npm run start
+# atau
+yarn build
+yarn start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Struktur Folder
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```
+almuhajirin-amal/
+├── src/
+│   ├── app/                # Routes Next.js App Router
+│   │   ├── page.js         # Redirects ke dashboard
+│   │   ├── dashboard/
+│   │   │   └── page.js     # Halaman Dashboard
+│   │   ├── tv/
+│   │   │   └── page.js     # Halaman TV Display
+│   │   └── layout.js
+│   ├── components/         # Komponen React
+│   │   ├── dashboard/      # Komponen untuk Dashboard
+│   │   ├── tv/             # Komponen untuk TV Display
+│   │   └── shared/         # Komponen bersama
+│   └── data/               # Data yang dapat diedit manual
+│       ├── programs.js     # Data program donasi
+│       ├── infaq.js        # Data infaq harian
+│       ├── donatur.js      # Data donatur
+│       └── ucapan.js       # Ucapan terima kasih
+├── public/
+├── next.config.js
+└── package.json
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Cara Mengubah Data
 
-## Learn More
+Semua data dapat diedit secara manual melalui file-file di folder `src/data/`. Berikut panduan untuk mengubah berbagai jenis data:
 
-To learn more about Next.js, take a look at the following resources:
+### 1. Data Program Donasi (`src/data/programs.js`)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Berisi data untuk program Ifthar, Qiyamul Lail, dan Tadarrus. Ubah nilai seperti:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `targetPerHari` - Target per hari dalam porsi atau rupiah
+- `progress` - Persentase progres pencapaian
+- `totalKebutuhan` - Total kebutuhan dalam 1 bulan
+- `terkumpul` - Jumlah yang sudah terkumpul
 
-## Deploy on Vercel
+### 2. Data Infaq Harian (`src/data/infaq.js`)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Berisi data infaq harian. Format:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```javascript
+{ hari: 1, jumlah: 2000000 }
+```
+
+### 3. Data Donatur (`src/data/donatur.js`)
+
+Berisi data donatur yang ditampilkan di TV Display. Format:
+
+```javascript
+{ nama: "P****** D", program: "Ifthar", jumlah: 450000 }
+```
+
+### 4. Ucapan Terima Kasih (`src/data/ucapan.js`)
+
+Berisi ucapan terima kasih yang ditampilkan secara bergantian. Format:
+
+```javascript
+{
+  nama: "Pak Djatmiko",
+  program: "Ifthar",
+  doa: "Semoga Allah memberikan kebarokahan pada harta bapak"
+}
+```
+
+### 5. Konfigurasi Dashboard dan TV Display
+
+Konfigurasi umum seperti nomor rekening, hari Ramadhan saat ini, dll dapat diubah di:
+
+- `src/data/dashboardConfig.js` - Untuk Dashboard
+- `src/data/tvConfig.js` - Untuk TV Display
+
+## Lisensi
+
+Aplikasi ini dibuat untuk keperluan internal Masjid Al Muhajirin Rewwin.
+
+## Kontak
+
+Untuk pertanyaan atau dukungan, silakan hubungi pengembang di [email atau kontak lainnya].

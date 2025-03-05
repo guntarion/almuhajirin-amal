@@ -1,0 +1,91 @@
+/* src/components/dashboard/InfaqDetailView.module.css */
+/* CSS Module for InfaqDetailView component */
+
+.container {
+  background-color: white;
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* shadow */
+}
+
+.header {
+  padding: 1rem; /* p-4 */
+}
+
+.titleSection {
+  display: flex;
+  align-items: center;
+}
+
+.iconContainer {
+  padding: 0.5rem; /* p-2 */
+  border-radius: 9999px; /* rounded-full */
+}
+
+.title {
+  margin-left: 0.75rem; /* ml-3 */
+  font-weight: 500; /* font-medium */
+}
+
+.totalSection {
+  margin-top: 1rem; /* mt-4 */
+}
+
+.totalTitle {
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500; /* font-medium */
+  margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.totalAmount {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 700; /* font-bold */
+}
+
+.chartSection {
+  margin-top: 1rem; /* mt-4 */
+}
+
+.chartTitle {
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500; /* font-medium */
+  margin-bottom: 0.75rem; /* mb-3 */
+}
+
+.chartContainer {
+  height: 200px; /* h-[200px] */
+}
+
+.detailsSection {
+  border-top-width: 1px; /* border-t */
+  border-color: #e5e7eb; /* border-gray-200 */
+  padding: 1rem; /* p-4 */
+}
+
+.detailsTitle {
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500; /* font-medium */
+  margin-bottom: 0.75rem; /* mb-3 */
+}
+
+.itemsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* space-y-2 */
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem; /* p-2 */
+  border-bottom-width: 1px; /* border-b */
+  border-color: #e5e7eb; /* border-gray-200 */
+}
+
+.dayLabel {
+  font-weight: 500; /* font-medium */
+}
+
+.amount {
+  font-weight: 500; /* font-medium */
+}

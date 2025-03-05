@@ -1,0 +1,90 @@
+/* src/components/tv/TVDonaturTerkini.module.css */
+/* CSS Module for TVDonaturTerkini component */
+
+.container {
+  background-color: white;
+  border-radius: 0.75rem; /* rounded-xl */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
+  padding: 1.5rem; /* p-6 */
+  flex-grow: 1;
+}
+
+.title {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 700; /* font-bold */
+  margin-bottom: 1rem; /* mb-4 */
+  display: flex;
+  align-items: center;
+}
+
+.starIcon {
+  width: 1.75rem; /* w-7 */
+  height: 1.75rem; /* h-7 */
+  margin-right: 0.5rem; /* mr-2 */
+  color: #eab308; /* text-yellow-500 */
+}
+
+.donaturList {
+  overflow: hidden;
+  height: 220px;
+}
+
+.donaturItems {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem; /* space-y-1 */
+}
+
+.donaturItem {
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.donaturCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem; /* p-3 */
+  border-radius: 0.5rem; /* rounded-lg */
+  background-color: #f9fafb; /* bg-gray-50 */
+  border-left-width: 4px; /* border-l-4 */
+}
+
+.iftharBorder {
+  border-color: #10b981; /* Ifthar program color */
+}
+
+.qiyamulLailBorder {
+  border-color: #6366f1; /* Qiyamul Lail program color */
+}
+
+.tadarrusBorder {
+  border-color: #f59e0b; /* Tadarrus program color */
+}
+
+.donaturName {
+  font-weight: 700; /* font-bold */
+  font-size: 1.25rem; /* text-xl */
+}
+
+.donaturProgram {
+  font-size: 1.125rem; /* text-lg */
+  margin-left: 0.5rem; /* ml-2 */
+  color: #4b5563; /* text-gray-600 */
+}
+
+.donaturAmount {
+  font-weight: 700; /* font-bold */
+  font-size: 1.25rem; /* text-xl */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

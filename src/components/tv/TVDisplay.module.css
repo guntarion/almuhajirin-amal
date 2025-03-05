@@ -1,0 +1,225 @@
+/* src/components/tv/TVDisplay.module.css */
+/* CSS Module for TVDisplay component */
+
+.container {
+  background-color: #f9fafb; /* bg-gray-50 */
+  height: 100vh;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+}
+
+.header {
+  background-color: #059669; /* bg-green-600 */
+  color: white;
+  padding-top: 1rem; /* py-4 */
+  padding-bottom: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+}
+
+.headerContent {
+  max-width: 1280px; /* container */
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2rem; /* px-8 */
+  padding-right: 2rem;
+}
+
+.headerTitle {
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 700; /* font-bold */
+}
+
+.headerSubtitle {
+  font-size: 1.5rem; /* text-2xl */
+  margin-top: 0.25rem; /* mt-1 */
+}
+
+.timeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.time {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 600; /* font-semibold */
+}
+
+.date {
+  font-size: 1.25rem; /* text-xl */
+}
+
+.dayBadge {
+  margin-top: 0.5rem; /* mt-2 */
+  background-color: #047857; /* bg-green-700 */
+  padding-left: 1rem; /* px-4 */
+  padding-right: 1rem;
+  padding-top: 0.25rem; /* py-1 */
+  padding-bottom: 0.25rem;
+  border-radius: 9999px; /* rounded-full */
+  font-size: 1.25rem; /* text-xl */
+}
+
+.mainContent {
+  max-width: 1280px; /* container */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem; /* px-8 */
+  padding-right: 2rem;
+  padding-top: 1.5rem; /* py-6 */
+  padding-bottom: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr)); /* grid-cols-12 */
+  gap: 1.5rem; /* gap-6 */
+  height: 100%;
+  max-height: calc(100vh - 130px);
+}
+
+.leftColumn {
+  grid-column: span 7 / span 7; /* col-span-7 */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* gap-6 */
+}
+
+.rightColumn {
+  grid-column: span 5 / span 5; /* col-span-5 */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* gap-6 */
+}
+
+.progressSection {
+  background-color: white;
+  border-radius: 0.75rem; /* rounded-xl */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
+  padding: 1.5rem; /* p-6 */
+  flex-grow: 1;
+}
+
+.sectionTitle {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 700; /* font-bold */
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+.programList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* space-y-6 */
+}
+
+.programCard {
+  background-color: white;
+  border-radius: 0.5rem; /* rounded-lg */
+  padding: 1rem; /* p-4 */
+}
+
+.programHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem; /* mb-3 */
+}
+
+.programTitleContainer {
+  display: flex;
+  align-items: center;
+}
+
+.programIcon {
+  width: 2.5rem; /* w-10 */
+  height: 2.5rem; /* h-10 */
+}
+
+.programTitle {
+  margin-left: 0.75rem; /* ml-3 */
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 700; /* font-bold */
+}
+
+.progressPercentage {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 700; /* font-bold */
+}
+
+.progressBar {
+  width: 100%;
+  background-color: #e5e7eb; /* bg-gray-200 */
+  border-radius: 9999px; /* rounded-full */
+  height: 1.25rem; /* h-5 */
+  margin-bottom: 0.75rem; /* mb-3 */
+}
+
+.progressFill {
+  height: 1.25rem; /* h-5 */
+  border-radius: 9999px; /* rounded-full */
+  transition: width 1s ease-in-out;
+}
+
+.programStats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.25rem; /* text-xl */
+}
+
+.programTotal {
+  /* No specific styling needed */
+}
+
+.programAchieved {
+  font-weight: 600; /* font-semibold */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.gradientBg {
+  background: linear-gradient(90deg, #10b981, #3b82f6, #10b981);
+  background-size: 200% 200%;
+  animation: gradientFlow 15s ease infinite;
+}
+
+.pulseSlow {
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.fadeIn {
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out forwards;
+}

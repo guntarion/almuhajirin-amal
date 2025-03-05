@@ -1,0 +1,46 @@
+/* src/components/dashboard/KPIWidget.module.css */
+/* CSS Module for KPIWidget component */
+
+.container {
+  background-color: white;
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* shadow */
+  padding: 0.75rem; /* p-3 */
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 500; /* font-medium */
+  color: #6b7280; /* text-gray-500 */
+  text-transform: uppercase;
+}
+
+.value {
+  margin-top: 0.25rem; /* mt-1 */
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 700; /* font-bold */
+}
+
+.progressBarContainer {
+  width: 100%;
+  background-color: #e5e7eb; /* bg-gray-200 */
+  border-radius: 9999px; /* rounded-full */
+  height: 0.5rem; /* h-2 */
+  margin-top: 0.5rem; /* mt-2 */
+}
+
+.progressBar {
+  height: 0.5rem; /* h-2 */
+  border-radius: 9999px; /* rounded-full */
+}
+
+.subValue {
+  font-size: 0.75rem; /* text-xs */
+  color: #6b7280; /* text-gray-500 */
+}

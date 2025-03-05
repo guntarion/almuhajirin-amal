@@ -1,0 +1,60 @@
+/* src/components/dashboard/DashboardFooter.module.css */
+/* CSS Module for DashboardFooter component */
+
+.footer {
+  background-color: white;
+  border-top-width: 1px; /* border-t */
+  margin-top: 1.5rem; /* mt-6 */
+}
+
+.container {
+  max-width: 80rem; /* max-w-7xl */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem; /* px-4 */
+  padding-right: 1rem;
+  padding-top: 1rem; /* py-4 */
+  padding-bottom: 1rem;
+}
+
+.content {
+  text-align: center;
+}
+
+.intro {
+  font-size: 0.875rem; /* text-sm */
+  color: #4b5563; /* text-gray-600 */
+  margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.accountNumber {
+  font-weight: 500; /* font-medium */
+  font-size: 0.875rem; /* text-sm */
+}
+
+.accountName {
+  font-size: 0.875rem; /* text-sm */
+  margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.contact {
+  font-size: 0.875rem; /* text-sm */
+  color: #4b5563; /* text-gray-600 */
+}
+
+.contactNumber {
+  font-weight: 500; /* font-medium */
+}
+
+.reminder {
+  font-size: 0.75rem; /* text-xs */
+  color: #6b7280; /* text-gray-500 */
+  margin-top: 0.5rem; /* mt-2 */
+}
+
+.doa {
+  font-size: 0.75rem; /* text-xs */
+  font-style: italic;
+  color: #6b7280; /* text-gray-500 */
+  margin-top: 0.5rem; /* mt-2 */
+}
