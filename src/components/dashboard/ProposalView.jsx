@@ -97,7 +97,7 @@ const ProposalView = () => {
                 <div className={styles.photoContainer}>
                   <Image src='/masHanung.jpeg' alt='Ketua Panitia' width={120} height={120} className={styles.ketuaPhoto} />
                   <div className={styles.photoCaption}>
-                    <p className={styles.captionTitle}>Ketua Panitia Ramadhan 144H</p>
+                    <p className={styles.captionTitle}>Ketua Panitia Ramadhan 1446 H</p>
                     <p className={styles.captionName}>M. Hanung Nugroho</p>
                   </div>
                 </div>

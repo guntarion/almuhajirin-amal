@@ -2,7 +2,7 @@
 // Konfigurasi untuk Dashboard yang dapat diedit
 
 export const dashboardConfig = {
-  currentDay: 4, // Hari ke-x Ramadhan
+  currentDay: 6, // Hari ke-x Ramadhan
   masjidName: 'Masjid Al Muhajirin Rewwin',
   tahunHijriah: '1446H',
   rekening: {
