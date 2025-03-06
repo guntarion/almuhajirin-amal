@@ -2,10 +2,13 @@
 // src/components/tv/TVProgresDonasiWidget.jsx
 // Komponen untuk menampilkan progres donasi di TV Display
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './TVProgresDonasiWidget.module.css';
 
 const TVProgresDonasiWidget = ({ program }) => {
+  // Animation state for progress bar
+  const [animateProgress, setAnimateProgress] = useState(0);
+
   // Default values if properties are missing
   const defaultColor = '#3B82F6'; // blue-500
   const defaultBgColor = 'rgba(59, 130, 246, 0.1)';
@@ -20,6 +23,16 @@ const TVProgresDonasiWidget = ({ program }) => {
   const terkumpul = program?.terkumpul || 0;
   const totalTarget = program?.totalTarget || 0;
   const format = program?.format || '';
+
+  // Animate the progress bar when component mounts or when program changes
+  useEffect(() => {
+    setAnimateProgress(0);
+    const timer = setTimeout(() => {
+      setAnimateProgress(progress);
+    }, 300); // Small delay for animation effect
+
+    return () => clearTimeout(timer);
+  }, [progress, nama]);
 
   // Format nilai berdasarkan jenis program
   const formatValue = (value, type) => {
@@ -81,14 +94,16 @@ const TVProgresDonasiWidget = ({ program }) => {
           {program?.icon}
           <span className={styles.title}>{nama}</span>
         </div>
-        <div className={styles.progressPercentage}>{progress}%</div>
+        <div className={styles.progressPercentage}>
+          <span className={styles.percentCounter}>{progress}%</span>
+        </div>
       </div>
 
       <div className={styles.progressBar}>
         <div
           className={styles.progressFill}
           style={{
-            width: `${progress}%`,
+            width: `${animateProgress}%`,
             backgroundColor: color,
           }}
         ></div>

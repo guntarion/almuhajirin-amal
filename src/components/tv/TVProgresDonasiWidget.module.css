@@ -5,6 +5,10 @@
   background-color: white;
   border-radius: 0.5rem; /* rounded-lg */
   padding: 1rem; /* p-4 */
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
@@ -28,6 +32,14 @@
 .progressPercentage {
   font-size: 1.875rem; /* text-3xl */
   font-weight: 700; /* font-bold */
+  display: flex;
+  align-items: center;
+}
+
+.percentCounter {
+  display: inline-block;
+  min-width: 3rem; /* Ensure consistent width */
+  text-align: right;
 }
 
 .progressBar {
@@ -36,6 +48,7 @@
   border-radius: 9999px; /* rounded-full */
   height: 1.25rem; /* h-5 */
   margin-bottom: 0.75rem; /* mb-3 */
+  overflow: hidden;
 }
 
 .progressFill {
@@ -48,6 +61,7 @@
   display: flex;
   justify-content: space-between;
   font-size: 1.25rem; /* text-xl */
+  margin-top: auto; /* Push to bottom when container is flex with direction column */
 }
 
 .totalStats {
@@ -56,4 +70,20 @@
 
 .achievedStats {
   font-weight: 600; /* font-semibold */
+}
+
+/* Animation for entering/leaving */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container {
+  animation: fadeIn 0.5s ease-out;
 }

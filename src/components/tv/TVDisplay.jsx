@@ -11,6 +11,7 @@ import TVDonaturTerkini from './TVDonaturTerkini';
 import TVInfaqHarianChart from './TVInfaqHarianChart';
 import TVAjakanDonasi from './TVAjakanDonasi';
 import TVProgresDonasiWidget from './TVProgresDonasiWidget';
+import TVPhotoSlideshow from './TVPhotoSlideshow';
 import { infaqHarian } from '@/data/infaq';
 import { tvDisplayConfig } from '@/data/tvConfig';
 import styles from './TVDisplay.module.css';
@@ -20,6 +21,7 @@ const TVDisplay = () => {
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
   const [currentDay] = useState(tvDisplayConfig.currentDay);
+  const [currentProgramIndex, setCurrentProgramIndex] = useState(0);
 
   // Data Program Donasi
   const programData = [
@@ -95,6 +97,15 @@ const TVDisplay = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // Efek untuk rotasi program donasi setiap 5 detik
+  useEffect(() => {
+    const rotationInterval = setInterval(() => {
+      setCurrentProgramIndex((prevIndex) => (prevIndex + 1) % programData.length);
+    }, 5000);
+
+    return () => clearInterval(rotationInterval);
+  }, [programData.length]);
+
   return (
     <div className={styles.container}>
       {/* Header */}
@@ -131,55 +142,23 @@ const TVDisplay = () => {
           <div className={styles.progressSection}>
             <h3 className={styles.sectionTitle}>Progress Donasi</h3>
             <div className={styles.programList}>
-              {programData.map((program, index) => (
-                <div
-                  key={index}
-                  className={styles.programCard}
-                  style={{
-                    borderLeft: `8px solid ${program.color}`,
-                    backgroundColor: program.bgColor,
-                    boxShadow: `0 4px 6px ${program.borderColor}`,
-                  }}
-                >
-                  <div className={styles.programHeader}>
-                    <div className={styles.programTitleContainer}>
-                      <span className={styles.programIcon}>{program.icon}</span>
-                      <span className={styles.programTitle}>{program.nama}</span>
-                    </div>
-                    <div className={styles.progressPercentage}>{program.progress}%</div>
-                  </div>
-
-                  <div className={styles.progressBar}>
+              <div className={styles.rotatingProgramContainer}>
+                <TVProgresDonasiWidget key={currentProgramIndex} program={programData[currentProgramIndex]} />
+                <div className={styles.indicatorContainer}>
+                  {programData.map((_, index) => (
                     <div
-                      className={styles.progressFill}
-                      style={{
-                        width: `${program.progress}%`,
-                        backgroundColor: program.color,
-                      }}
+                      key={index}
+                      className={`${styles.indicator} ${index === currentProgramIndex ? styles.indicatorActive : ''}`}
+                      style={{ backgroundColor: index === currentProgramIndex ? programData[index].color : '#CBD5E0' }}
                     ></div>
-                  </div>
-
-                  <div className={styles.programStats}>
-                    {program.format === 'currency' ? (
-                      <div className={styles.programTotal}>
-                        {new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(program.terkumpul)} /{' '}
-                        {new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(program.totalTarget)}
-                      </div>
-                    ) : program.nama === 'Tadarrus' ? (
-                      <div className={styles.programTotal}>
-                        {program.terkumpul}/{program.totalTarget} hari
-                      </div>
-                    ) : (
-                      <div className={styles.programTotal}>
-                        {program.terkumpul.toLocaleString()} / {program.totalTarget.toLocaleString()} porsi
-                      </div>
-                    )}
-                    <div className={styles.programAchieved} style={{ color: program.color }}>
-                      {program.progress}% tercapai
-                    </div>
-                  </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+            </div>
+
+            {/* Photo Slideshow */}
+            <div className={styles.slideshowSection}>
+              <TVPhotoSlideshow />
             </div>
           </div>
         </div>
