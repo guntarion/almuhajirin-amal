@@ -2,7 +2,7 @@
 // Data program donasi untuk Masjid Al Muhajirin Rewwin
 // Data ini dapat diedit manual untuk mengubah informasi program donasi
 
-import { Utensils, Coffee, Package, DollarSign } from 'lucide-react';
+import { Utensils, Coffee, Package, Coins } from 'lucide-react';
 
 // Data Takjil (Ifthar)
 export const takjilData = {
@@ -67,12 +67,12 @@ export const allPrograms = [takjilData, sahurData, snackData];
 // Data Infaq harian
 export const infaqData = {
   nama: 'Infaq Harian',
-  icon: 'dollarSign', // Nama icon dari lucide-react
+  icon: 'coins', // Nama icon dari lucide-react
   color: '#EC4899', // text-pink-500
   lightColor: '#FCE7F3', // bg-pink-100
   progress: 13, // (4/30) * 100
   totalKebutuhan: 30, // 30 hari
-  terkumpul: 4, // 4 hari
+  terkumpul: 4, // hari ke-4 - mengikuti jumlah hari perolehan
   chartData: [
     { hari: 1, jumlah: 2000000 },
     { hari: 2, jumlah: 1500000 },
@@ -104,142 +104,12 @@ export function getIconComponent(iconName) {
       return Coffee;
     case 'package':
       return Package;
-    case 'dollarSign':
-      return DollarSign;
+    case 'coins':
+      return Coins;
     default:
       return Package;
   }
 }
-
-// src/data/infaq.js
-// Data infaq harian yang dapat diedit
-
-export const infaqHarian = [
-  { hari: 1, jumlah: 2000000 },
-  { hari: 2, jumlah: 1500000 },
-  { hari: 3, jumlah: 1300000 },
-  { hari: 4, jumlah: 1100000 },
-];
-
-// src/data/donatur.js
-// Data donatur untuk TV Display
-
-export const donaturList = [
-  { nama: 'P****** D', program: 'Ifthar', jumlah: 450000 },
-  { nama: 'R*** S', program: 'Tadarrus', jumlah: 200000 },
-  { nama: 'Keluarga A****', program: 'Qiyamul Lail', jumlah: 350000 },
-  { nama: 'Hamba A****', program: 'Ifthar', jumlah: 900000 },
-  { nama: 'F***** Z', program: 'Tadarrus', jumlah: 100000 },
-  { nama: 'H**** S', program: 'Ifthar', jumlah: 180000 },
-  { nama: 'S***** R', program: 'Infaq', jumlah: 500000 },
-  { nama: 'Ummi K******', program: 'Qiyamul Lail', jumlah: 280000 },
-  { nama: 'M***** Al H', program: 'Ifthar', jumlah: 360000 },
-  { nama: 'Kel. B*** S', program: 'Infaq', jumlah: 1000000 },
-];
-
-// src/data/ucapan.js
-// Data ucapan terima kasih untuk widget
-
-export const ucapanList = [
-  {
-    nama: 'Pak Djatmiko',
-    program: 'Ifthar',
-    doa: 'Semoga Allah memberikan kebarokahan pada harta bapak',
-  },
-  {
-    nama: 'Bu Rini',
-    program: 'Tadarrus',
-    doa: "Semoga putra putrinya menjadi penghafal Al Qur'an",
-  },
-  {
-    nama: 'Keluarga Bapak Ahmad',
-    program: 'Qiyamul Lail',
-    doa: 'Semoga keluarga selalu diberikan keberkahan dan kebahagiaan',
-  },
-  {
-    nama: 'Hamba Allah',
-    program: 'Infaq',
-    doa: 'Semoga dilipatgandakan pahalanya oleh Allah SWT',
-  },
-  {
-    nama: 'Ibu Fatimah',
-    program: 'Ifthar',
-    doa: 'Semoga mendapatkan ampunan di bulan suci Ramadhan',
-  },
-  {
-    nama: 'Pak Hasan',
-    program: 'Tadarrus',
-    doa: 'Semoga menjadi amal jariyah yang mengalir pahalanya',
-  },
-];
-
-// Versi lengkap untuk TV Display
-export const ucapanDoaList = [
-  {
-    nama: 'Pak Djatmiko',
-    program: 'Ifthar',
-    doa: 'Semoga Allah memberikan kebarokahan pada harta dan keluarganya',
-  },
-  {
-    nama: 'Bu Rini',
-    program: 'Tadarrus',
-    doa: "Semoga putra putrinya menjadi penghafal Al Qur'an yang shaleh dan shalehah",
-  },
-  {
-    nama: 'Keluarga Ahmad',
-    program: 'Qiyamul Lail',
-    doa: 'Semoga selalu diberikan keberkahan, keharmonisan, dan kebahagiaan',
-  },
-  {
-    nama: 'Bapak Hasan',
-    program: 'Infaq',
-    doa: 'Semoga dilipatgandakan pahalanya dan diampuni segala dosanya oleh Allah SWT',
-  },
-  {
-    nama: 'Ibu Fatimah',
-    program: 'Tadarrus',
-    doa: 'Semoga mendapatkan ampunan di bulan suci Ramadhan dan diberikan keberkahan rezeki',
-  },
-  {
-    nama: 'Ustadz Ibrahim',
-    program: 'Ifthar',
-    doa: 'Semoga menjadi amal jariyah yang mengalir pahalanya dan diberikan umur yang panjang dan barokah',
-  },
-];
-
-// src/data/tvConfig.js
-// Konfigurasi untuk TV Display yang dapat diedit
-
-export const tvDisplayConfig = {
-  currentDay: 4, // Hari ke-x Ramadhan
-  masjidName: 'Masjid Al Muhajirin Rewwin',
-  tahunHijriah: '1446H',
-  rekening: {
-    bank: 'Bank Muamalat (Kode 147)',
-    nomor: '707.000.5656',
-    atasNama: 'Al Muhajirin Rewwin Sidoarjo YYS',
-  },
-  kontak: {
-    whatsapp: '081223343416',
-  },
-};
-
-// src/data/dashboardConfig.js
-// Konfigurasi untuk Dashboard yang dapat diedit
-
-export const dashboardConfig = {
-  currentDay: 4, // Hari ke-x Ramadhan
-  masjidName: 'Masjid Al Muhajirin Rewwin',
-  tahunHijriah: '1446H',
-  rekening: {
-    bank: 'Bank Muamalat (Kode 147)',
-    nomor: '707.000.5656',
-    atasNama: 'Al Muhajirin Rewwin Sidoarjo YYS',
-  },
-  kontak: {
-    whatsapp: '081223343416',
-  },
-};
 
 // Format currency (fungsi utilitas)
 export const formatCurrency = (amount) => {
