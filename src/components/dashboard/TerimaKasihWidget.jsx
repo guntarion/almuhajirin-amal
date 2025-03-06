@@ -5,7 +5,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Heart } from 'lucide-react';
-import { ucapanList } from '@/data/ucapan';
+import { ucapanDoaList } from '@/data/ucapan';
 import styles from './TerimaKasihWidget.module.css';
 
 const TerimaKasihWidget = () => {
@@ -14,13 +14,13 @@ const TerimaKasihWidget = () => {
   // Efek untuk mengubah ucapan setiap 5 detik
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % ucapanList.length);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % ucapanDoaList.length);
     }, 5000);
 
     return () => clearInterval(interval);
   }, []);
 
-  const ucapan = ucapanList[currentIndex];
+  const ucapan = ucapanDoaList[currentIndex];
 
   return (
     <div className={styles.container}>
@@ -47,7 +47,7 @@ const TerimaKasihWidget = () => {
 
         {/* Dots indicator */}
         <div className={styles.dotsContainer}>
-          {ucapanList.map((_, index) => (
+          {ucapanDoaList.map((_, index) => (
             <span key={index} className={`${styles.dot} ${index === currentIndex ? styles.activeDot : styles.inactiveDot}`} />
           ))}
         </div>

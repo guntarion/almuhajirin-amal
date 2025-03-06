@@ -27,7 +27,7 @@ const TVDisplay = () => {
   const programData = [
     {
       nama: 'Ifthar',
-      targetPerHari: 180,
+      targetPerHari: 200,
       totalHari: 30,
       totalTarget: 5400, // 180 * 30
       terkumpul: 3420, // 19 hari sudah terpenuhi

@@ -81,7 +81,9 @@ const DonasiDashboard = () => {
               <Image src='/logo-yamr.png' alt='Al Muhajirin' width={80} height={80} className={styles.logo} />
             </div>
 
-            <h1 className={styles.title}>Donasi Ramadhan {dashboardConfig.masjidName}</h1>
+            <h1 className={styles.title}>
+              Donasi Ramadhan <br></br> {dashboardConfig.masjidName}
+            </h1>
 
             <div className={styles.dayBadge}>
               <div className={styles.dayBadgeContent}>
@@ -166,7 +168,7 @@ const DonasiDashboard = () => {
               <KPIWidget
                 title='Infaq'
                 value={formatCurrency(infaqData.chartData.reduce((sum, item) => sum + item.jumlah, 0))}
-                progressValue='Total 4 hari'
+                progressValue='Total 6 hari'
               />
             </div>
 

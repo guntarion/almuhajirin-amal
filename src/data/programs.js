@@ -45,8 +45,8 @@ export const sahurData = {
 // Data Snack (Tadarrus)
 export const snackData = {
   nama: 'Tadarrus',
-  targetPerHari: 100000, // Dalam rupiah
-  hargaPerPorsi: 100000, // 100ribu per hari
+  targetPerHari: 50000, // Dalam rupiah
+  hargaPerPorsi: 50000, // 100ribu per hari
   icon: 'package', // Nama icon dari lucide-react
   color: '#F59E0B', // text-amber-500
   lightColor: '#FEF3C7', // bg-amber-100
@@ -70,14 +70,16 @@ export const infaqData = {
   icon: 'coins', // Nama icon dari lucide-react
   color: '#EC4899', // text-pink-500
   lightColor: '#FCE7F3', // bg-pink-100
-  progress: 13, // (4/30) * 100
+  progress: 20, // (6/30) * 100
   totalKebutuhan: 30, // 30 hari
-  terkumpul: 4, // hari ke-4 - mengikuti jumlah hari perolehan
+  terkumpul: 6, // hari ke-6 - mengikuti jumlah hari perolehan
   chartData: [
-    { hari: 1, jumlah: 2000000 },
-    { hari: 2, jumlah: 1500000 },
-    { hari: 3, jumlah: 1300000 },
-    { hari: 4, jumlah: 1100000 },
+    { hari: 1, jumlah: 100000 },
+    { hari: 2, jumlah: 900000 },
+    { hari: 3, jumlah: 900000 },
+    { hari: 4, jumlah: 800000 },
+    { hari: 5, jumlah: 1000000 },
+    { hari: 6, jumlah: 500000 },
   ],
 };
 
