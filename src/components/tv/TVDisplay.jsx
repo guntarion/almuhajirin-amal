@@ -10,6 +10,7 @@ import TVTerimaKasihWidget from './TVTerimaKasihWidget';
 import TVDonaturTerkini from './TVDonaturTerkini';
 import TVInfaqHarianChart from './TVInfaqHarianChart';
 import TVAjakanDonasi from './TVAjakanDonasi';
+import TVProgresDonasiWidget from './TVProgresDonasiWidget';
 import { infaqHarian } from '@/data/infaq';
 import { tvDisplayConfig } from '@/data/tvConfig';
 import styles from './TVDisplay.module.css';
@@ -57,6 +58,17 @@ const TVDisplay = () => {
       bgColor: 'rgba(245, 158, 11, 0.1)',
       borderColor: 'rgba(245, 158, 11, 0.5)',
       icon: <Calendar className={styles.programIcon} style={{ color: '#F59E0B' }} />,
+    },
+    {
+      nama: 'Infaq',
+      totalTarget: 132600000,
+      terkumpul: 4500000,
+      progress: 3,
+      color: '#EC4899', // pink-500
+      bgColor: 'rgba(236, 72, 153, 0.1)',
+      borderColor: 'rgba(236, 72, 153, 0.5)',
+      icon: <CreditCard className={styles.programIcon} style={{ color: '#EC4899' }} />,
+      format: 'currency',
     },
   ];
 
@@ -148,11 +160,20 @@ const TVDisplay = () => {
                   </div>
 
                   <div className={styles.programStats}>
-                    <div className={styles.programTotal}>
-                      {program.nama === 'Tadarrus'
-                        ? `${program.terkumpul}/${program.totalTarget} hari`
-                        : `${program.terkumpul.toLocaleString()} / ${program.totalTarget.toLocaleString()} porsi`}
-                    </div>
+                    {program.format === 'currency' ? (
+                      <div className={styles.programTotal}>
+                        {new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(program.terkumpul)} /{' '}
+                        {new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(program.totalTarget)}
+                      </div>
+                    ) : program.nama === 'Tadarrus' ? (
+                      <div className={styles.programTotal}>
+                        {program.terkumpul}/{program.totalTarget} hari
+                      </div>
+                    ) : (
+                      <div className={styles.programTotal}>
+                        {program.terkumpul.toLocaleString()} / {program.totalTarget.toLocaleString()} porsi
+                      </div>
+                    )}
                     <div className={styles.programAchieved} style={{ color: program.color }}>
                       {program.progress}% tercapai
                     </div>
