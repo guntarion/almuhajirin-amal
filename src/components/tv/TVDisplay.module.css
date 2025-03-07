@@ -1,36 +1,39 @@
 /* src/components/tv/TVDisplay.module.css */
-/* CSS Module for TVDisplay component */
+/* Redesigned CSS Module for TVDisplay component optimized for 16:9 TV screens */
 
 .container {
   background-color: #f9fafb; /* bg-gray-50 */
+  width: 100vw;
   height: 100vh;
   overflow: hidden;
-  aspect-ratio: 16/9;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
-  background: linear-gradient(to right, #0d6e7c, #15b9c9); /* Turquoise/teal gradient to match logo */
+  background: linear-gradient(to right, #0d6e7c, #15b9c9); /* Turquoise/teal gradient */
   color: white;
-  padding-top: 1rem; /* py-4 */
-  padding-bottom: 1rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+  padding: 0.75rem 1.5rem; /* Reduced padding */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+  flex: 0 0 auto; /* Don't grow or shrink */
+  height: 12vh; /* Fixed proportion of screen height */
+  min-height: 80px; /* Minimum height */
+  max-height: 100px; /* Maximum height */
 }
 
 .headerContent {
-  max-width: 1280px; /* container */
-  margin-left: auto;
-  margin-right: auto;
+  height: 100%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 2rem; /* px-8 */
-  padding-right: 2rem;
 }
 
 .headerTitleContainer {
   display: flex;
   align-items: center;
-  gap: 1.5rem; /* gap-6 */
+  gap: 1rem; /* Reduced from 1.5rem */
 }
 
 .logoContainer {
@@ -40,7 +43,7 @@
 
 .logo {
   border-radius: 50%; /* rounded-full */
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lighter shadow */
 }
 
 .titleWrapper {
@@ -49,12 +52,13 @@
 }
 
 .headerTitle {
-  font-size: 2.25rem; /* text-4xl */
+  font-size: 1.8rem; /* Reduced from 2.25rem */
   font-weight: 700; /* font-bold */
+  line-height: 1.1;
 }
 
 .headerSubtitle {
-  font-size: 1.5rem; /* text-2xl */
+  font-size: 1.2rem; /* Reduced from 1.5rem */
   margin-top: 0.25rem; /* mt-1 */
 }
 
@@ -65,67 +69,54 @@
 }
 
 .time {
-  font-size: 1.875rem; /* text-3xl */
+  font-size: 1.6rem; /* Reduced from 1.875rem */
   font-weight: 600; /* font-semibold */
 }
 
 .date {
-  font-size: 1.25rem; /* text-xl */
+  font-size: 1.1rem; /* Reduced from 1.25rem */
 }
 
 .dayBadge {
-  margin-top: 0.5rem; /* mt-2 */
-  background-color: rgba(255, 255, 255, 0.2); /* semi-transparent white */
-  padding-left: 1rem; /* px-4 */
-  padding-right: 1rem;
-  padding-top: 0.25rem; /* py-1 */
-  padding-bottom: 0.25rem;
+  margin-top: 0.25rem; /* Reduced from 0.5rem */
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0.2rem 0.75rem; /* Reduced padding */
   border-radius: 9999px; /* rounded-full */
-  font-size: 1.25rem; /* text-xl */
+  font-size: 1.1rem; /* Reduced from 1.25rem */
 }
 
 .mainContent {
-  max-width: 1280px; /* container */
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 2rem; /* px-8 */
-  padding-right: 2rem;
-  padding-top: 1.5rem; /* py-6 */
-  padding-bottom: 1.5rem;
+  flex: 1; /* Take remaining space */
+  padding: 0.75rem 1rem; /* Reduced padding */
   display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr)); /* grid-cols-12 */
-  gap: 1.5rem; /* gap-6 */
-  height: 100%;
-  max-height: calc(100vh - 130px);
+  grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+  gap: 1rem; /* Reduced from 1.5rem */
+  height: calc(88vh - 0.75rem); /* Header is 12vh, so this ensures it fills the screen */
+  overflow: hidden;
 }
 
-.leftColumn {
-  grid-column: span 7 / span 7; /* col-span-7 */
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem; /* gap-6 */
-}
-
+.leftColumn,
+.middleColumn,
 .rightColumn {
-  grid-column: span 5 / span 2; /* col-span-5 */
   display: flex;
   flex-direction: column;
-  gap: 2rem; /* gap-6 */
+  gap: 1rem; /* Reduced from 1.5rem and 2rem */
+  overflow: hidden;
+  height: 100%;
 }
 
 .progressSection {
   background-color: white;
   border-radius: 0.75rem; /* rounded-xl */
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
-  padding: 1.5rem; /* p-6 */
-  flex-grow: 1;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+  padding: 1rem; /* Reduced from 1.5rem */
+  height: 180px; /* Fixed height instead of flex: 1 */
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
 }
 
 .sectionTitle {
-  font-size: 1.5rem; /* text-2xl */
+  font-size: 1.3rem; /* Reduced from 1.5rem */
   font-weight: 700; /* font-bold */
   margin-bottom: 0.5rem; /* mb-2 */
 }
@@ -133,81 +124,11 @@
 .programList {
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 
 .slideshowSection {
-  margin-top: 1rem;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.programCard {
-  background-color: white;
-  border-radius: 0.5rem; /* rounded-lg */
-  padding: 1rem; /* p-4 */
-}
-
-.programHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 0.75rem; /* mb-3 */
-}
-
-.programTitleContainer {
-  display: flex;
-  align-items: center;
-}
-
-.programIcon {
-  width: 2.5rem; /* w-10 */
-  height: 2.5rem; /* h-10 */
-}
-
-.programTitle {
-  margin-left: 0.75rem; /* ml-3 */
-  font-size: 1.5rem; /* text-2xl */
-  font-weight: 700; /* font-bold */
-}
-
-.progressPercentage {
-  font-size: 1.875rem; /* text-3xl */
-  font-weight: 700; /* font-bold */
-}
-
-.progressBar {
-  width: 100%;
-  background-color: #e5e7eb; /* bg-gray-200 */
-  border-radius: 9999px; /* rounded-full */
-  height: 1.25rem; /* h-5 */
-  margin-bottom: 0.75rem; /* mb-3 */
-}
-
-.progressFill {
-  height: 1.25rem; /* h-5 */
-  border-radius: 9999px; /* rounded-full */
-  transition: width 1s ease-in-out;
-}
-
-.programStats {
-  display: flex;
-  justify-content: space-between;
-  font-size: 1.25rem; /* text-xl */
-}
-
-.programTotal {
-  /* No specific styling needed */
-}
-
-.programAchieved {
-  font-weight: 600; /* font-semibold */
-}
-
-/* Rotating Program Container Styles */
-.rotatingProgramContainer {
-  position: relative;
-  height: 180px; /* Set a fixed height to maintain consistent space */
+  flex: 1; /* Take remaining space */
   display: flex;
   flex-direction: column;
 }
@@ -215,32 +136,40 @@
 .indicatorContainer {
   display: flex;
   justify-content: center;
-  gap: 0.5rem; /* gap-2 */
-  margin-top: 1rem; /* mt-4 */
+  gap: 0.4rem; /* gap-1.5 */
+  margin-top: 0.75rem; /* mt-3 */
 }
 
 .indicator {
-  width: 0.75rem; /* w-3 */
-  height: 0.75rem; /* h-3 */
+  width: 0.6rem; /* Reduced from 0.75rem */
+  height: 0.6rem; /* Reduced from 0.75rem */
   border-radius: 50%; /* rounded-full */
   background-color: #cbd5e0; /* gray-400 */
   transition: all 0.3s ease;
 }
 
 .indicatorActive {
-  width: 1.5rem; /* w-6 when active */
-  border-radius: 9999px; /* still rounded-full but elongated */
+  width: 1.2rem; /* Reduced from 1.5rem */
+  border-radius: 9999px; /* elongated */
 }
 
-/* Animation Styles */
-@keyframes fadeIn {
-  from {
+/* New styles for rotating outer container */
+.donaturTerkiniContainer {
+  height: 45%; /* Take 45% of right column height */
+  margin-bottom: 1rem;
+}
+
+.ajakanDonasiContainer {
+  height: 52%; /* Take 52% of right column height */
+}
+
+/* Animation keyframes */
+@keyframes fadeInOut {
+  0% {
     opacity: 0;
-    transform: translateY(10px);
   }
-  to {
+  100% {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
@@ -261,7 +190,7 @@
     transform: scale(1);
   }
   50% {
-    transform: scale(1.05);
+    transform: scale(1.02); /* Reduced scale effect */
   }
   100% {
     transform: scale(1);
@@ -269,33 +198,11 @@
 }
 
 .gradientBg {
-  background: linear-gradient(90deg, #0d6e7c, #15b9c9, #0d6e7c); /* Updated to teal colors to match logo */
+  background: linear-gradient(90deg, #0d6e7c, #15b9c9, #0d6e7c);
   background-size: 200% 200%;
   animation: gradientFlow 15s ease infinite;
 }
 
 .pulseSlow {
   animation: pulse 4s ease-in-out infinite;
-}
-
-.fadeIn {
-  opacity: 0;
-  animation: fadeIn 0.6s ease-out forwards;
-}
-
-/* Add animation for the rotating program */
-@keyframes slideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Apply animation to each TVProgresDonasiWidget */
-.rotatingProgramContainer > div:first-child {
-  animation: slideInUp 0.5s ease-out;
 }

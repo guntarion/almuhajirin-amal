@@ -1,7 +1,7 @@
 'use client';
 // src/components/tv/TVDisplay.jsx
-// Komponen utama untuk TV Display
-// Tampilan untuk layar TV Masjid (16:9)
+// Komponen utama untuk TV Display - Redesigned to fit 16:9 TV screens
+// Tampilan untuk layar TV Masjid (16:9) dengan layout responsif
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
@@ -22,6 +22,7 @@ const TVDisplay = () => {
   const [time, setTime] = useState('');
   const [currentDay] = useState(tvDisplayConfig.currentDay);
   const [currentProgramIndex, setCurrentProgramIndex] = useState(0);
+  // No need for section rotation
 
   // Data Program Donasi
   const programData = [
@@ -106,6 +107,8 @@ const TVDisplay = () => {
     return () => clearInterval(rotationInterval);
   }, [programData.length]);
 
+  // No need for section rotation effect
+
   return (
     <div className={styles.container}>
       {/* Header */}
@@ -114,7 +117,7 @@ const TVDisplay = () => {
           <div className={styles.headerTitleContainer}>
             {/* Logo */}
             <div className={styles.logoContainer}>
-              <Image src='/logo-yamr.png' alt='Al Muhajirin' width={90} height={90} className={styles.logo} />
+              <Image src='/logo-yamr.png' alt='Al Muhajirin' width={80} height={80} className={styles.logo} />
             </div>
             <div className={styles.titleWrapper}>
               <h1 className={styles.headerTitle}>Dashboard Donasi Ramadhan</h1>
@@ -131,48 +134,53 @@ const TVDisplay = () => {
         </div>
       </div>
 
-      {/* Main Content */}
+      {/* Main Content with 3-column layout for better TV display */}
       <div className={styles.mainContent}>
-        {/* Left Column */}
+        {/* Left Column - Thank You and Progress */}
         <div className={styles.leftColumn}>
-          {/* Ucapan Terima Kasih Widget */}
+          {/* Ucapan Terima Kasih Widget - Compact Version */}
           <TVTerimaKasihWidget />
 
-          {/* Progress Bar Charts */}
+          {/* Progress Bar Charts - Featured Program Only */}
           <div className={styles.progressSection}>
             <h3 className={styles.sectionTitle}>Progress Donasi</h3>
             <div className={styles.programList}>
-              <div className={styles.rotatingProgramContainer}>
-                <TVProgresDonasiWidget key={currentProgramIndex} program={programData[currentProgramIndex]} />
-                <div className={styles.indicatorContainer}>
-                  {programData.map((_, index) => (
-                    <div
-                      key={index}
-                      className={`${styles.indicator} ${index === currentProgramIndex ? styles.indicatorActive : ''}`}
-                      style={{ backgroundColor: index === currentProgramIndex ? programData[index].color : '#CBD5E0' }}
-                    ></div>
-                  ))}
-                </div>
+              <TVProgresDonasiWidget key={currentProgramIndex} program={programData[currentProgramIndex]} />
+              <div className={styles.indicatorContainer}>
+                {programData.map((_, index) => (
+                  <div
+                    key={index}
+                    className={`${styles.indicator} ${index === currentProgramIndex ? styles.indicatorActive : ''}`}
+                    style={{ backgroundColor: index === currentProgramIndex ? programData[index].color : '#CBD5E0' }}
+                  ></div>
+                ))}
               </div>
-            </div>
-
-            {/* Photo Slideshow */}
-            <div className={styles.slideshowSection}>
-              <TVPhotoSlideshow />
             </div>
           </div>
         </div>
 
-        {/* Right Column */}
-        <div className={styles.rightColumn}>
-          {/* Donatur Terkini */}
-          <TVDonaturTerkini />
-
-          {/* Chart Infaq Harian */}
+        {/* Middle Column - Infaq Chart and Photos */}
+        <div className={styles.middleColumn}>
+          {/* Chart Infaq Harian with Reduced Height */}
           <TVInfaqHarianChart infaqHarian={infaqHarian} />
 
+          {/* Photo Slideshow */}
+          <div className={styles.slideshowSection}>
+            <TVPhotoSlideshow />
+          </div>
+        </div>
+
+        {/* Right Column - Donors List and Donation Info */}
+        <div className={styles.rightColumn}>
+          {/* Donatur Terkini - With reduced height */}
+          <div className={styles.donaturTerkiniContainer}>
+            <TVDonaturTerkini />
+          </div>
+
           {/* Ajakan Donasi */}
-          <TVAjakanDonasi />
+          <div className={styles.ajakanDonasiContainer}>
+            <TVAjakanDonasi />
+          </div>
         </div>
       </div>
     </div>

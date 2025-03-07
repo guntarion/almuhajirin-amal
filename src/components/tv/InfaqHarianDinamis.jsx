@@ -1,6 +1,6 @@
 'use client';
 // src/components/tv/InfaqHarianDinamis.jsx
-// Komponen untuk menampilkan perolehan infaq harian secara dinamis
+// Komponen untuk menampilkan perolehan infaq harian secara dinamis - Optimized for TV screens
 // Digunakan di TV Display
 
 import React, { useState, useEffect } from 'react';
