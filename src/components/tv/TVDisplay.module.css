@@ -107,10 +107,10 @@
 }
 
 .rightColumn {
-  grid-column: span 5 / span 5; /* col-span-5 */
+  grid-column: span 5 / span 2; /* col-span-5 */
   display: flex;
   flex-direction: column;
-  gap: 1.5rem; /* gap-6 */
+  gap: 2rem; /* gap-6 */
 }
 
 .progressSection {

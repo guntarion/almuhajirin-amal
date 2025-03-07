@@ -14,7 +14,7 @@ const TVDonaturTerkini = () => {
   // Efek untuk mengubah daftar donatur setiap 4 detik
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentDonaturIndex((prevIndex) => (prevIndex + 1) % (donaturList.length - 2));
+      setCurrentDonaturIndex((prevIndex) => (prevIndex + 1) % donaturList.length);
     }, 4000);
 
     return () => clearInterval(interval);
@@ -22,7 +22,7 @@ const TVDonaturTerkini = () => {
 
   // Animation delay styling
   const getAnimationDelay = (idx) => ({
-    animationDelay: `${idx * 0.2}s`,
+    animationDelay: `${idx * 0.15}s`,
   });
 
   return (
@@ -34,7 +34,7 @@ const TVDonaturTerkini = () => {
 
       <div className={styles.donaturList}>
         <div className={styles.donaturItems}>
-          {donaturList.slice(currentDonaturIndex, currentDonaturIndex + 3).map((donatur, idx) => (
+          {donaturList.slice(currentDonaturIndex, currentDonaturIndex + 8).map((donatur, idx) => (
             <div key={`${donatur.nama}-${idx}`} className={styles.donaturItem} style={getAnimationDelay(idx)}>
               <div
                 className={`${styles.donaturCard} ${

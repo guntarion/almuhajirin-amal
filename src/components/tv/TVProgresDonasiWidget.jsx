@@ -4,6 +4,7 @@
 
 import React, { useEffect, useState } from 'react';
 import styles from './TVProgresDonasiWidget.module.css';
+import { snackData, formatCurrency, infaqTotalData } from '../../data/programs.js';
 
 const TVProgresDonasiWidget = ({ program }) => {
   // Animation state for progress bar
@@ -34,35 +35,29 @@ const TVProgresDonasiWidget = ({ program }) => {
     return () => clearTimeout(timer);
   }, [progress, nama]);
 
-  // Format nilai berdasarkan jenis program
-  const formatValue = (value, type) => {
-    if (type === 'currency') {
-      return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(value);
-    }
-    return value.toLocaleString();
-  };
-
   // Menentukan format tampilan berdasarkan jenis program
   const renderStats = () => {
     if (format === 'currency') {
       return (
         <div className={styles.stats}>
           <div className={styles.totalStats}>
-            {formatValue(terkumpul, format)} / {formatValue(totalTarget, format)}
+            {formatCurrency(infaqTotalData.totalRupiahPemasukan)} / {formatCurrency(infaqTotalData.totalRupiahKebutuhan)}
           </div>
           <div className={styles.achievedStats} style={{ color }}>
-            {progress}% tercapai
+            {infaqTotalData.prosenPencapaian.toFixed(2)}% tercapai
           </div>
         </div>
       );
     } else if (nama === 'Tadarrus') {
+      // Use data from snackData for Tadarrus program
+      const tadarrusData = snackData;
       return (
         <div className={styles.stats}>
           <div className={styles.totalStats}>
-            {terkumpul}/{totalTarget} hari
+            {tadarrusData.terkumpul}/{tadarrusData.totalKebutuhan} hari
           </div>
           <div className={styles.achievedStats} style={{ color }}>
-            {progress}% tercapai
+            {tadarrusData.progress}% tercapai
           </div>
         </div>
       );
@@ -95,7 +90,9 @@ const TVProgresDonasiWidget = ({ program }) => {
           <span className={styles.title}>{nama}</span>
         </div>
         <div className={styles.progressPercentage}>
-          <span className={styles.percentCounter}>{progress}%</span>
+          <span className={styles.percentCounter}>
+            {nama === 'Tadarrus' ? snackData.progress : format === 'currency' ? infaqTotalData.prosenPencapaian.toFixed(2) : progress}%
+          </span>
         </div>
       </div>
 
@@ -103,7 +100,7 @@ const TVProgresDonasiWidget = ({ program }) => {
         <div
           className={styles.progressFill}
           style={{
-            width: `${animateProgress}%`,
+            width: `${nama === 'Tadarrus' ? snackData.progress : format === 'currency' ? infaqTotalData.prosenPencapaian : animateProgress}%`,
             backgroundColor: color,
           }}
         ></div>

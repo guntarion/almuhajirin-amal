@@ -5,14 +5,14 @@
   background-color: white;
   border-radius: 0.75rem; /* rounded-xl */
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
-  padding: 1.5rem; /* p-6 */
+  padding: 1.25rem; /* p-5 - reduced from p-6 */
   flex-grow: 1;
 }
 
 .title {
   font-size: 1.5rem; /* text-2xl */
   font-weight: 700; /* font-bold */
-  margin-bottom: 1rem; /* mb-4 */
+  margin-bottom: 0.75rem; /* mb-3 - reduced from mb-4 */
   display: flex;
   align-items: center;
 }
@@ -26,13 +26,13 @@
 
 .donaturList {
   overflow: hidden;
-  height: 220px;
+  height: 400px; /* Increased to fit 8 items */
 }
 
 .donaturItems {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem; /* space-y-1 */
+  gap: 0.15rem; /* Further reduced from 0.2rem */
 }
 
 .donaturItem {
@@ -44,7 +44,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.75rem; /* p-3 */
+  padding: 0.35rem 0.75rem; /* Further reduced vertical padding */
   border-radius: 0.5rem; /* rounded-lg */
   background-color: #f9fafb; /* bg-gray-50 */
   border-left-width: 4px; /* border-l-4 */
@@ -64,18 +64,18 @@
 
 .donaturName {
   font-weight: 700; /* font-bold */
-  font-size: 1.25rem; /* text-xl */
+  font-size: 1.125rem; /* text-lg - reduced from text-xl */
 }
 
 .donaturProgram {
-  font-size: 1.125rem; /* text-lg */
+  font-size: 1rem; /* text-base - reduced from text-lg */
   margin-left: 0.5rem; /* ml-2 */
   color: #4b5563; /* text-gray-600 */
 }
 
 .donaturAmount {
   font-weight: 700; /* font-bold */
-  font-size: 1.25rem; /* text-xl */
+  font-size: 1.125rem; /* text-lg - reduced from text-xl */
 }
 
 @keyframes fadeIn {
