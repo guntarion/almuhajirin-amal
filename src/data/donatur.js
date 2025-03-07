@@ -19,4 +19,8 @@ export const donaturList = [
   { nama: 'H****** T*******', program: 'Takjil', jumlah: 150000 },
   { nama: 'A. G***** A****', program: 'Konsumsi Petugas Takjil', jumlah: 750000 },
   { nama: 'S******', program: 'Kerja Bakti', jumlah: 184000 },
+  { nama: 'S******', program: 'Takjil', jumlah: 500000 },
+  { nama: 'S*****', program: 'Takjil', jumlah: 500000 },
+  { nama: 'A***', program: 'Takjil', jumlah: 500000 },
+  { nama: 'Hamba Allah #1', program: 'Khataman Tadarus', jumlah: 750000 },
 ];

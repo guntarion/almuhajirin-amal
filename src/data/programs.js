@@ -50,14 +50,14 @@ export const snackData = {
   icon: 'package', // Nama icon dari lucide-react
   color: '#F59E0B', // text-amber-500
   lightColor: '#FEF3C7', // bg-amber-100
-  progress: 13, // (4/30) * 100
+  progress: 90, // (4/30) * 100
   totalKebutuhan: 30, // 30 hari
-  terkumpul: 4, // 4 hari sudah terpenuhi
+  terkumpul: 28, // 4 hari sudah terpenuhi
   chartData: Array.from({ length: 30 }, (_, i) => ({
     hari: i + 1,
     target: 1, // 1 paket per hari
-    terkumpul: i < 4 ? 1 : 0,
-    terpenuhi: i < 4,
+    terkumpul: i < 28 ? 1 : 0,
+    terpenuhi: i < 28,
   })),
 };
 
@@ -70,9 +70,9 @@ export const infaqData = {
   icon: 'coins', // Nama icon dari lucide-react
   color: '#EC4899', // text-pink-500
   lightColor: '#FCE7F3', // bg-pink-100
-  progress: 20, // (6/30) * 100
+  progress: 3.61, // (6/30) * 100
   totalKebutuhan: 30, // 30 hari
-  terkumpul: 6, // hari ke-6 - mengikuti jumlah hari perolehan
+  terkumpul: 7, // hari ke-6 - mengikuti jumlah hari perolehan
   chartData: [
     { hari: 1, jumlah: 100000 },
     { hari: 2, jumlah: 900000 },
@@ -80,7 +80,22 @@ export const infaqData = {
     { hari: 4, jumlah: 800000 },
     { hari: 5, jumlah: 1000000 },
     { hari: 6, jumlah: 500000 },
+    { hari: 7, jumlah: 600000 },
   ],
+};
+
+// Data Infaq Total
+export const infaqTotalData = {
+  nama: 'Infaq Total',
+  icon: 'coins', // Nama icon dari lucide-react
+  color: '#EC4899', // text-pink-500
+  lightColor: '#FCE7F3', // bg-pink-100
+  totalRupiahKebutuhan: 132600000,
+  totalRupiahPemasukan: 48060000,
+  totalRupiahPengeluaran: 49816482,
+  selisihKekurangan: -84540000,
+  prosenPencapaian: 36.24,
+  statusSaldo: -1756482,
 };
 
 // Data gabungan untuk overview chart

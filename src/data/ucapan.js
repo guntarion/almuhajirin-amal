@@ -44,7 +44,7 @@ export const ucapanDoaList = [
   {
     nama: 'Bu Endang Purwati',
     program: 'Tarhib',
-    doa: 'Semoga putra putrinya menjadi penghafal Al Qur an yang shaleh dan shalehah',
+    doa: 'Semoga putra putrinya menjadi penghafal Al Quran yang shaleh dan shalehah',
   },
   {
     nama: 'Ust Zainal Arifin',
@@ -79,7 +79,7 @@ export const ucapanDoaList = [
   {
     nama: 'Pak Andy Sulistyono',
     program: 'Ifthar',
-    doa: 'Semoga anak-anaknya tumbuh menjadi generasi Qur ani yang berbakti kepada orang tua',
+    doa: 'Semoga anak-anaknya tumbuh menjadi generasi Qurani yang berbakti kepada orang tua',
   },
   {
     nama: 'Pak Safuwan',
@@ -120,5 +120,25 @@ export const ucapanDoaList = [
     nama: 'Pak Safuwan',
     program: 'Kerja Bakti',
     doa: 'Semoga rumah tangganya dilimpahi sakinah, mawaddah, dan rahmah',
+  },
+  {
+    nama: 'Pak Sudomo',
+    program: 'Takjil',
+    doa: 'Semoga diberikan kesuksesan dalam karir dan keberkahan dalam usaha',
+  },
+  {
+    nama: 'Bu Sugeng',
+    program: 'Takjil',
+    doa: 'Semoga selalu istiqomah dalam kebaikan dan dijauhkan dari godaan syaitan',
+  },
+  {
+    nama: 'Bu Arif',
+    program: 'Takjil',
+    doa: 'Semoga selalu dalam kesehatan dan kecukupan rezeki yang halal dan berkah',
+  },
+  {
+    nama: ' Hamba Allah #1',
+    program: 'Khataman Tadarus',
+    doa: 'Semoga diberikan kemudahan dalam menjalankan ibadah dan ketaatan',
   },
 ];

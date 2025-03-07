@@ -16,7 +16,7 @@ import InfaqDetailView from './InfaqDetailView';
 import ProposalView from './ProposalView';
 import DashboardFooter from './DashboardFooter';
 
-import { takjilData, sahurData, snackData, infaqData, overviewChartData, formatCurrency } from '@/data/programs';
+import { takjilData, sahurData, snackData, infaqData, infaqTotalData, overviewChartData, formatCurrency } from '@/data/programs';
 import { dashboardConfig } from '@/data/dashboardConfig';
 import styles from './DonasiDashboard.module.css';
 
@@ -158,7 +158,7 @@ const DonasiDashboard = () => {
             </div>
 
             {/* KPI Widgets - 2 Columns */}
-            <div className={styles.kpiGrid}>
+            {/* <div className={styles.kpiGrid}>
               <KPIWidget title='Ifthar' value={takjilData.progress} progressValue={takjilData.progress} progressColor='bg-green-500' />
 
               <KPIWidget title='Qiyamul Lail' value={sahurData.progress} progressValue={sahurData.progress} progressColor='bg-indigo-500' />
@@ -168,12 +168,12 @@ const DonasiDashboard = () => {
               <KPIWidget
                 title='Infaq'
                 value={formatCurrency(infaqData.chartData.reduce((sum, item) => sum + item.jumlah, 0))}
-                progressValue='Total 6 hari'
+                progressValue='Total 7 hari'
               />
-            </div>
+            </div> */}
 
             {/* Chart Section */}
-            <div className={styles.chartCard}>
+            {/* <div className={styles.chartCard}>
               <h3 className={styles.chartTitle}>Progres Donasi Harian</h3>
               <div className={styles.chartContainer}>
                 <ResponsiveContainer width='100%' height='100%'>
@@ -188,7 +188,7 @@ const DonasiDashboard = () => {
                   </BarChart>
                 </ResponsiveContainer>
               </div>
-            </div>
+            </div> */}
 
             {/* Program Cards */}
             <div className={styles.programsGrid}>
@@ -198,8 +198,8 @@ const DonasiDashboard = () => {
 
               <ProgramCard program={snackData} onClick={() => setActiveTab('snack')} />
 
-              {/* Infaq Card */}
-              <InfaqCard infaqData={infaqData} onClick={() => setActiveTab('infaq')} />
+              {/* Infaq Card - Now using infaqTotalData instead of infaqData */}
+              <InfaqCard infaqData={infaqTotalData} onClick={() => setActiveTab('infaq')} />
             </div>
           </div>
         )}
