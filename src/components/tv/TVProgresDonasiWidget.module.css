@@ -60,7 +60,7 @@
 .stats {
   display: flex;
   justify-content: space-between;
-  font-size: 1.25rem; /* text-xl */
+  font-size: 1.05rem; /* text-xl */
   margin-top: auto; /* Push to bottom when container is flex with direction column */
 }
 
@@ -69,7 +69,7 @@
 }
 
 .achievedStats {
-  font-weight: 600; /* font-semibold */
+  font-weight: 400; /* font-semibold */
 }
 
 /* Animation for entering/leaving */

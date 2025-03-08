@@ -11,15 +11,15 @@
 }
 
 .title {
-  font-size: 1.5rem; /* text-2xl */
-  font-weight: 700; /* font-bold */
-  margin-bottom: 0.75rem; /* mb-3 */
+  font-size: 1.1rem; /* text-2xl */
+  font-weight: 400; /* font-bold */
+  margin-bottom: 0.25rem; /* mb-1 */
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem; /* space-y-3 */
+  gap: 0.25rem; /* space-y-1 */
 }
 
 .row {
@@ -34,7 +34,7 @@
 }
 
 .text {
-  font-size: 1.25rem; /* text-xl */
+  font-size: 0.95rem; /* text-xl */
 }
 
 .label {
@@ -46,13 +46,13 @@
 }
 
 .accountName {
-  font-size: 1.25rem; /* text-xl */
+  font-size: 0.95rem; /* text-xl */
 }
 
 .footer {
-  margin-top: 0.75rem; /* mt-3 */
+  margin-top: 0.25rem; /* mt-1 */
   font-style: italic;
-  font-size: 1.125rem; /* text-lg */
+  font-size: 0.85rem; /* text-lg */
   opacity: 0.9; /* opacity-90 */
 }
 
