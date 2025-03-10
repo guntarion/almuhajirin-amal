@@ -12,14 +12,14 @@ export const takjilData = {
   icon: 'utensils', // Nama icon dari lucide-react
   color: '#10B981', // text-emerald-500
   lightColor: '#D1FAE5', // bg-emerald-100
-  progress: 63, // (19/30) * 100
+  progress: 90, // (19/30) * 100
   totalKebutuhan: 5400, // 180 porsi * 30 hari
-  terkumpul: 3420, // 19 hari terpenuhi (180 * 19)
+  terkumpul: 4910, // 19 hari terpenuhi (180 * 19)
   chartData: Array.from({ length: 30 }, (_, i) => ({
     hari: i + 1,
     target: 180,
-    terkumpul: i < 19 ? 180 : i === 19 ? 90 : 0,
-    terpenuhi: i < 19,
+    terkumpul: i < 27 ? 180 : i === 27 ? 50 : 0,
+    terpenuhi: i < 27,
   })),
 };
 
@@ -50,14 +50,14 @@ export const snackData = {
   icon: 'package', // Nama icon dari lucide-react
   color: '#F59E0B', // text-amber-500
   lightColor: '#FEF3C7', // bg-amber-100
-  progress: 90, // (4/30) * 100
+  progress: 100, // (4/30) * 100
   totalKebutuhan: 30, // 30 hari
-  terkumpul: 28, // 4 hari sudah terpenuhi
+  terkumpul: 30, // 4 hari sudah terpenuhi
   chartData: Array.from({ length: 30 }, (_, i) => ({
     hari: i + 1,
     target: 1, // 1 paket per hari
-    terkumpul: i < 28 ? 1 : 0,
-    terpenuhi: i < 28,
+    terkumpul: i < 30 ? 1 : 0,
+    terpenuhi: i < 30,
   })),
 };
 
