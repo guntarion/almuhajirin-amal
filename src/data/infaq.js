@@ -9,5 +9,6 @@ export const infaqHarian = [
   { hari: 5, jumlah: 1000000 },
   { hari: 6, jumlah: 500000 },
   { hari: 7, jumlah: 600000 },
+  { hari: 8, jumlah: 0 },
   { hari: 9, jumlah: 900000 },
 ];

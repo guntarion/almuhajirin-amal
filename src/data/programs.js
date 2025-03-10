@@ -70,9 +70,9 @@ export const infaqData = {
   icon: 'coins', // Nama icon dari lucide-react
   color: '#EC4899', // text-pink-500
   lightColor: '#FCE7F3', // bg-pink-100
-  progress: 27, // (8/30) * 100
+  progress: 30, // (8/30) * 100
   totalKebutuhan: 30, // 30 hari
-  terkumpul: 8, // hari ke-8 - mengikuti jumlah hari perolehan
+  terkumpul: 9, // hari ke-8 - mengikuti jumlah hari perolehan
   chartData: [
     { hari: 1, jumlah: 100000 },
     { hari: 2, jumlah: 900000 },
@@ -81,6 +81,7 @@ export const infaqData = {
     { hari: 5, jumlah: 1000000 },
     { hari: 6, jumlah: 500000 },
     { hari: 7, jumlah: 600000 },
+    { hari: 8, jumlah: 0 },
     { hari: 9, jumlah: 900000 },
   ],
 };
