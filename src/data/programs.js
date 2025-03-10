@@ -96,7 +96,7 @@ export const infaqTotalData = {
   totalRupiahPemasukan: 64765500,
   totalRupiahPengeluaran: 58824482,
   selisihKekurangan: -67834500,
-  prosenPencapaian: 4884,
+  prosenPencapaian: 48.84,
   statusSaldo: 5941018,
 };
 
