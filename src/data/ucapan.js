@@ -1,40 +1,6 @@
 // src/data/ucapan.js
 // Data ucapan terima kasih untuk widget
 
-export const ucapanList = [
-  {
-    nama: 'Pak Djatmiko',
-    program: 'Ifthar',
-    doa: 'Semoga Allah memberikan kebarokahan pada harta bapak',
-  },
-  {
-    nama: 'Bu Rini',
-    program: 'Tadarrus',
-    doa: "Semoga putra putrinya menjadi penghafal Al Qur'an",
-  },
-  {
-    nama: 'Keluarga Bapak Ahmad',
-    program: 'Qiyamul Lail',
-    doa: 'Semoga keluarga selalu diberikan keberkahan dan kebahagiaan',
-  },
-  {
-    nama: 'Hamba Allah',
-    program: 'Infaq',
-    doa: 'Semoga dilipatgandakan pahalanya oleh Allah SWT',
-  },
-  {
-    nama: 'Ibu Fatimah',
-    program: 'Ifthar',
-    doa: 'Semoga mendapatkan ampunan di bulan suci Ramadhan',
-  },
-  {
-    nama: 'Pak Hasan',
-    program: 'Tadarrus',
-    doa: 'Semoga menjadi amal jariyah yang mengalir pahalanya',
-  },
-];
-
-// Versi lengkap untuk TV Display
 export const ucapanDoaList = [
   {
     nama: 'Pak Sapto Wibowo',
@@ -94,7 +60,7 @@ export const ucapanDoaList = [
   {
     nama: 'Pak Oki Cahyo Nugroho',
     program: 'Tadarus',
-    doa: 'Semoga keluarganya selalu dalam keadaan sehat wal afiat dan dilimpahi kebahagiaan',
+    doa: 'Semoga keluarganya selalu dalam keadaan sehat walafiat dan dilimpahi kebahagiaan',
   },
   {
     nama: 'Bu Towi',
@@ -140,5 +106,70 @@ export const ucapanDoaList = [
     nama: ' Hamba Allah #1',
     program: 'Khataman Tadarus',
     doa: 'Semoga diberikan kemudahan dalam menjalankan ibadah dan ketaatan',
+  },
+  {
+    nama: ' Mas Adnan Bintang',
+    program: 'Takjil',
+    doa: 'Semoga keluarganya selalu diliputi kasih sayang dan saling pengertian',
+  },
+  {
+    nama: ' Bu Sudarsono',
+    program: 'Takjil',
+    doa: 'Semoga dilindungi dari segala penyakit dan marabahaya di manapun berada',
+  },
+  {
+    nama: ' H. Astur Fahmi',
+    program: 'Takjil',
+    doa: 'Semoga apa yang diinfakkan menjadi penolong di hari akhir nanti',
+  },
+  {
+    nama: ' Anindya Ajeng Hanifa',
+    program: 'Takjil',
+    doa: 'Semoga Allah menempatkan keluarganya di surganya yang tinggi',
+  },
+  {
+    nama: ' M. Arief Budiman',
+    program: 'Takjil',
+    doa: 'Semoga diberikan ketentraman hidup dan keluarga yang sakinah',
+  },
+  {
+    nama: ' Bpk. Heriyanto',
+    program: 'Takjil',
+    doa: 'Semoga selalu berada dalam lindungan dan rahmat Allah SWT',
+  },
+  {
+    nama: ' Drs. H. Adji Wahib Hamam',
+    program: 'Takjil',
+    doa: 'Semoga Allah mencurahkan kasih sayang-Nya kepada keluarga dan keturunannya',
+  },
+  {
+    nama: ' Bu Maryono',
+    program: 'Takjil',
+    doa: 'Semoga dimudahkan dalam menunaikan ibadah haji dan umrah',
+  },
+  {
+    nama: ' Nuning Septiana',
+    program: 'Takjil',
+    doa: 'Semoga selalu diberikan taufik dan hidayah dalam menjalani kehidupan',
+  },
+  {
+    nama: ' Bpk. Anung',
+    program: 'Takjil',
+    doa: 'Semoga harta yang disedekahkan menjadi pemberat timbangan kebaikan di akhirat',
+  },
+  {
+    nama: ' Rizaldy Choirul Ardiansyah',
+    program: 'Takjil',
+    doa: 'Semoga diberikan kekuatan iman dan keteguhan dalam menghadapi ujian hidup',
+  },
+  {
+    nama: ' Iwan Efrulwan',
+    program: 'Takjil',
+    doa: 'Semoga Allah menjadikan keluarganya sebagai teladan dalam kebaikan',
+  },
+  {
+    nama: ' H. Cahyo Husni Tamrin',
+    program: 'Takjil',
+    doa: 'Semoga selalu diberikan ketenangan jiwa dan kedamaian dalam hati',
   },
 ];
