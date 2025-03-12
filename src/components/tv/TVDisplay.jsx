@@ -5,7 +5,6 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { Heart, Star, Gift, Calendar, CreditCard, Phone } from 'lucide-react';
 import TVTerimaKasihWidget from './TVTerimaKasihWidget';
 import TVDonaturTerkini from './TVDonaturTerkini';
 import TVInfaqHarianChart from './TVInfaqHarianChart';
@@ -14,6 +13,7 @@ import TVProgresDonasiWidget from './TVProgresDonasiWidget';
 import TVPhotoSlideshow from './TVPhotoSlideshow';
 import { infaqHarian } from '@/data/infaq';
 import { tvDisplayConfig } from '@/data/tvConfig';
+import { takjilData, sahurData, snackData, infaqTotalData, getIconComponent, formatCurrency } from '@/data/programs';
 import styles from './TVDisplay.module.css';
 
 const TVDisplay = () => {
@@ -22,55 +22,40 @@ const TVDisplay = () => {
   const [time, setTime] = useState('');
   const [currentDay] = useState(tvDisplayConfig.currentDay);
   const [currentProgramIndex, setCurrentProgramIndex] = useState(0);
-  // No need for section rotation
 
   // Data Program Donasi
   const programData = [
     {
-      nama: 'Ifthar',
-      targetPerHari: 200,
-      totalHari: 30,
-      totalTarget: 5400, // 180 * 30
-      terkumpul: 3420, // 19 hari sudah terpenuhi
-      progress: 63,
-      color: '#10B981', // emerald-500
-      bgColor: 'rgba(16, 185, 129, 0.1)',
-      borderColor: 'rgba(16, 185, 129, 0.5)',
-      icon: <Gift className={styles.programIcon} style={{ color: '#10B981' }} />,
+      ...takjilData,
+      totalTarget: takjilData.totalKebutuhan,
+      bgColor: `${takjilData.color}1a`,
+      borderColor: `${takjilData.color}80`,
+      icon: getIconComponent(takjilData.icon),
     },
     {
-      nama: 'Qiyamul Lail',
-      targetPerHari: 70,
-      totalHari: 10,
-      totalTarget: 700, // 70 * 10
-      terkumpul: 0,
-      progress: 0,
-      color: '#6366F1', // indigo-500
-      bgColor: 'rgba(99, 102, 241, 0.1)',
-      borderColor: 'rgba(99, 102, 241, 0.5)',
-      icon: <Star className={styles.programIcon} style={{ color: '#6366F1' }} />,
+      ...sahurData,
+      totalTarget: sahurData.totalKebutuhan,
+      bgColor: `${sahurData.color}1a`,
+      borderColor: `${sahurData.color}80`,
+      icon: getIconComponent(sahurData.icon),
     },
     {
-      nama: 'Tadarrus',
-      targetPerHari: 100000,
-      totalHari: 30,
-      totalTarget: 30,
-      terkumpul: 4,
-      progress: 13,
-      color: '#F59E0B', // amber-500
-      bgColor: 'rgba(245, 158, 11, 0.1)',
-      borderColor: 'rgba(245, 158, 11, 0.5)',
-      icon: <Calendar className={styles.programIcon} style={{ color: '#F59E0B' }} />,
+      ...snackData,
+      totalTarget: snackData.totalKebutuhan,
+      bgColor: `${snackData.color}1a`,
+      borderColor: `${snackData.color}80`,
+      icon: getIconComponent(snackData.icon),
     },
     {
+      ...infaqTotalData,
       nama: 'Infaq',
-      totalTarget: 132600000,
-      terkumpul: 4500000,
-      progress: 3,
-      color: '#EC4899', // pink-500
+      totalTarget: infaqTotalData.totalRupiahKebutuhan,
+      terkumpul: infaqTotalData.totalRupiahPemasukan,
+      progress: infaqTotalData.prosenPencapaian,
+      color: '#EC4899',
       bgColor: 'rgba(236, 72, 153, 0.1)',
       borderColor: 'rgba(236, 72, 153, 0.5)',
-      icon: <CreditCard className={styles.programIcon} style={{ color: '#EC4899' }} />,
+      icon: getIconComponent('coins'),
       format: 'currency',
     },
   ];
@@ -145,7 +130,11 @@ const TVDisplay = () => {
           <div className={styles.progressSection}>
             <h3 className={styles.sectionTitle}>Progress Donasi</h3>
             <div className={styles.programList}>
-              <TVProgresDonasiWidget key={currentProgramIndex} program={programData[currentProgramIndex]} />
+              <TVProgresDonasiWidget
+                key={currentProgramIndex}
+                program={programData[currentProgramIndex]}
+                formatValue={programData[currentProgramIndex].format === 'currency' ? formatCurrency : undefined}
+              />
               <div className={styles.indicatorContainer}>
                 {programData.map((_, index) => (
                   <div

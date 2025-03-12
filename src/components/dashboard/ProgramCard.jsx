@@ -38,12 +38,6 @@ const ProgramCard = ({ program, onClick, formatValue }) => {
           <span>{program.progress}%</span>
         </div>
       </div>
-
-      {(program.nama === 'Ifthar (Berbuka)' || program.nama === 'Qiyamul Lail (Sahur)' || program.nama === 'Tadarrus') && (
-        <button className={styles.detailButton} onClick={onClick}>
-          Detail
-        </button>
-      )}
     </div>
   );
 };

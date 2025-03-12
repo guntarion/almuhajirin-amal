@@ -11,9 +11,7 @@ import TerimaKasihWidget from './TerimaKasihWidget';
 import ProgramCard from './ProgramCard';
 import InfaqCard from './InfaqCard';
 import KPIWidget from './KPIWidget';
-import DonasiDetailView from './DonasiDetailView';
 import InfaqDetailView from './InfaqDetailView';
-import BisyarohDetailView from './BisyarohDetailView';
 import ProposalView from './ProposalView';
 import DashboardFooter from './DashboardFooter';
 
@@ -65,49 +63,6 @@ const DonasiDashboard = () => {
     return Math.round((hitungTotalDonasiPorsi() / hitungTotalKebutuhanPorsi()) * 100);
   };
 
-  // Mendapatkan data aktif berdasarkan tab
-  const getActiveTabData = () => {
-    switch (activeTab) {
-      case 'takjil':
-        return takjilData;
-      case 'sahur':
-        return sahurData;
-      case 'snack':
-        return snackData;
-      case 'kurma':
-        return kurmaData;
-      case 'air':
-        return airData;
-      case 'infaq':
-        return infaqData;
-      case 'bisyaroh':
-        return bisyarohData;
-      default:
-        return null;
-    }
-  };
-
-  const activeTabData = getActiveTabData();
-
-  // Render the appropriate detail view based on active tab
-  const renderDetailView = () => {
-    if (!activeTabData) return null;
-
-    if (activeTab === 'bisyaroh') {
-      return <BisyarohDetailView data={activeTabData} />;
-    }
-
-    if (activeTab === 'infaq') {
-      return <InfaqDetailView infaqData={infaqData} />;
-    }
-
-    if (['takjil', 'sahur', 'snack', 'kurma', 'air'].includes(activeTab)) {
-      return <DonasiDetailView activeTabData={activeTabData} activeTab={activeTab} />;
-    }
-
-    return null;
-  };
-
   return (
     <div className={styles.container}>
       {/* Header */}
@@ -148,24 +103,6 @@ const DonasiDashboard = () => {
                 Overview
               </button>
               <button
-                className={`${styles.navButton} ${activeTab === 'takjil' ? styles.navButtonActive : styles.navButtonInactive}`}
-                onClick={() => setActiveTab('takjil')}
-              >
-                Ifthar
-              </button>
-              <button
-                className={`${styles.navButton} ${activeTab === 'sahur' ? styles.navButtonActive : styles.navButtonInactive}`}
-                onClick={() => setActiveTab('sahur')}
-              >
-                Qiyamul Lail
-              </button>
-              <button
-                className={`${styles.navButton} ${activeTab === 'snack' ? styles.navButtonActive : styles.navButtonInactive}`}
-                onClick={() => setActiveTab('snack')}
-              >
-                Tadarrus
-              </button>
-              <button
                 className={`${styles.navButton} ${activeTab === 'infaq' ? styles.navButtonActive : styles.navButtonInactive}`}
                 onClick={() => setActiveTab('infaq')}
               >
@@ -197,19 +134,19 @@ const DonasiDashboard = () => {
 
             {/* Program Cards */}
             <div className={styles.programsGrid}>
-              <ProgramCard program={takjilData} onClick={() => setActiveTab('takjil')} />
-              <ProgramCard program={sahurData} onClick={() => setActiveTab('sahur')} />
-              <ProgramCard program={snackData} onClick={() => setActiveTab('snack')} />
-              <ProgramCard program={kurmaData} onClick={() => setActiveTab('kurma')} />
-              <ProgramCard program={airData} onClick={() => setActiveTab('air')} />
-              <ProgramCard program={bisyarohData} onClick={() => setActiveTab('bisyaroh')} formatValue={formatCurrencyJuta} />
+              <ProgramCard program={takjilData} />
+              <ProgramCard program={sahurData} />
+              <ProgramCard program={snackData} />
+              <ProgramCard program={kurmaData} />
+              <ProgramCard program={airData} />
+              <ProgramCard program={bisyarohData} formatValue={formatCurrencyJuta} />
               <InfaqCard infaqData={infaqTotalData} onClick={() => setActiveTab('infaq')} />
             </div>
           </div>
         )}
 
-        {/* Details Section */}
-        {renderDetailView()}
+        {/* Infaq Detail */}
+        {activeTab === 'infaq' && <InfaqDetailView infaqData={infaqData} />}
 
         {/* Proposal View */}
         {activeTab === 'proposal' && <ProposalView />}
