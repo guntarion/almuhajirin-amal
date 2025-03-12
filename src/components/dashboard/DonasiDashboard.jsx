@@ -13,10 +13,23 @@ import InfaqCard from './InfaqCard';
 import KPIWidget from './KPIWidget';
 import DonasiDetailView from './DonasiDetailView';
 import InfaqDetailView from './InfaqDetailView';
+import BisyarohDetailView from './BisyarohDetailView';
 import ProposalView from './ProposalView';
 import DashboardFooter from './DashboardFooter';
 
-import { takjilData, sahurData, snackData, infaqData, infaqTotalData, overviewChartData, formatCurrency } from '@/data/programs';
+import {
+  takjilData,
+  sahurData,
+  snackData,
+  kurmaData,
+  airData,
+  bisyarohData,
+  infaqData,
+  infaqTotalData,
+  overviewChartData,
+  formatCurrency,
+  formatCurrencyJuta,
+} from '@/data/programs';
 import { dashboardConfig } from '@/data/dashboardConfig';
 import styles from './DonasiDashboard.module.css';
 
@@ -61,14 +74,39 @@ const DonasiDashboard = () => {
         return sahurData;
       case 'snack':
         return snackData;
+      case 'kurma':
+        return kurmaData;
+      case 'air':
+        return airData;
       case 'infaq':
         return infaqData;
+      case 'bisyaroh':
+        return bisyarohData;
       default:
         return null;
     }
   };
 
   const activeTabData = getActiveTabData();
+
+  // Render the appropriate detail view based on active tab
+  const renderDetailView = () => {
+    if (!activeTabData) return null;
+
+    if (activeTab === 'bisyaroh') {
+      return <BisyarohDetailView data={activeTabData} />;
+    }
+
+    if (activeTab === 'infaq') {
+      return <InfaqDetailView infaqData={infaqData} />;
+    }
+
+    if (['takjil', 'sahur', 'snack', 'kurma', 'air'].includes(activeTab)) {
+      return <DonasiDetailView activeTabData={activeTabData} activeTab={activeTab} />;
+    }
+
+    return null;
+  };
 
   return (
     <div className={styles.container}>
@@ -157,60 +195,21 @@ const DonasiDashboard = () => {
               <TerimaKasihWidget />
             </div>
 
-            {/* KPI Widgets - 2 Columns */}
-            {/* <div className={styles.kpiGrid}>
-              <KPIWidget title='Ifthar' value={takjilData.progress} progressValue={takjilData.progress} progressColor='bg-green-500' />
-
-              <KPIWidget title='Qiyamul Lail' value={sahurData.progress} progressValue={sahurData.progress} progressColor='bg-indigo-500' />
-
-              <KPIWidget title='Tadarrus' value={snackData.progress} progressValue={snackData.progress} progressColor='bg-amber-500' />
-
-              <KPIWidget
-                title='Infaq'
-                value={formatCurrency(infaqData.chartData.reduce((sum, item) => sum + item.jumlah, 0))}
-                progressValue='Total 7 hari'
-              />
-            </div> */}
-
-            {/* Chart Section */}
-            {/* <div className={styles.chartCard}>
-              <h3 className={styles.chartTitle}>Progres Donasi Harian</h3>
-              <div className={styles.chartContainer}>
-                <ResponsiveContainer width='100%' height='100%'>
-                  <BarChart data={overviewChartData.slice(0, 10)} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
-                    <CartesianGrid strokeDasharray='3 3' />
-                    <XAxis dataKey='hari' tick={{ fontSize: 10 }} />
-                    <YAxis tick={{ fontSize: 10 }} />
-                    <Tooltip />
-                    <Bar dataKey='ifthar' name='Ifthar' fill='#10B981' />
-                    <Bar dataKey='tadarrus' name='Tadarrus' fill='#F59E0B' />
-                    <Bar dataKey='qiyamulLail' name='Qiyamul Lail' fill='#6366F1' />
-                  </BarChart>
-                </ResponsiveContainer>
-              </div>
-            </div> */}
-
             {/* Program Cards */}
             <div className={styles.programsGrid}>
               <ProgramCard program={takjilData} onClick={() => setActiveTab('takjil')} />
-
               <ProgramCard program={sahurData} onClick={() => setActiveTab('sahur')} />
-
               <ProgramCard program={snackData} onClick={() => setActiveTab('snack')} />
-
-              {/* Infaq Card - Now using infaqTotalData instead of infaqData */}
+              <ProgramCard program={kurmaData} onClick={() => setActiveTab('kurma')} />
+              <ProgramCard program={airData} onClick={() => setActiveTab('air')} />
+              <ProgramCard program={bisyarohData} onClick={() => setActiveTab('bisyaroh')} formatValue={formatCurrencyJuta} />
               <InfaqCard infaqData={infaqTotalData} onClick={() => setActiveTab('infaq')} />
             </div>
           </div>
         )}
 
-        {/* Detail Takjil/Sahur/Snack */}
-        {(activeTab === 'takjil' || activeTab === 'sahur' || activeTab === 'snack') && activeTabData && (
-          <DonasiDetailView activeTabData={activeTabData} activeTab={activeTab} />
-        )}
-
-        {/* Infaq Detail */}
-        {activeTab === 'infaq' && <InfaqDetailView infaqData={infaqData} />}
+        {/* Details Section */}
+        {renderDetailView()}
 
         {/* Proposal View */}
         {activeTab === 'proposal' && <ProposalView />}

@@ -62,7 +62,58 @@ export const snackData = {
 };
 
 // Koleksi semua program untuk mudah diiterasi
-export const allPrograms = [takjilData, sahurData, snackData];
+// Data Kebutuhan Kurma
+export const kurmaData = {
+  nama: 'Kebutuhan Kurma',
+  icon: 'package',
+  color: '#DC2626', // text-red-600
+  lightColor: '#FEE2E2', // bg-red-100
+  progress: 84,
+  totalKebutuhan: 95, // dalam kg
+  terkumpul: 80,
+  chartData: Array.from({ length: 30 }, (_, i) => ({
+    hari: i + 1,
+    target: 95,
+    terkumpul: 80,
+    terpenuhi: false,
+  })),
+};
+
+// Data Kebutuhan Air Mineral
+export const airData = {
+  nama: 'Kebutuhan Air Mineral',
+  icon: 'package',
+  color: '#0EA5E9', // text-sky-500
+  lightColor: '#E0F2FE', // bg-sky-100
+  progress: 73,
+  totalKebutuhan: 150, // dalam dus
+  terkumpul: 110,
+  chartData: Array.from({ length: 30 }, (_, i) => ({
+    hari: i + 1,
+    target: 150,
+    terkumpul: 110,
+    terpenuhi: false,
+  })),
+};
+
+// Data Bisyaroh
+export const bisyarohData = {
+  nama: 'Bisyaroh (Ustadz, Imam, Petugas)',
+  icon: 'coins',
+  color: '#9333EA', // text-purple-600
+  lightColor: '#F3E8FF', // bg-purple-100
+  progress: ((14959000 / 29800000) * 100).toFixed(2), // Calculate percentage automatically
+  totalKebutuhan: 29800000,
+  terkumpul: 14959000,
+  chartData: Array.from({ length: 30 }, (_, i) => ({
+    hari: i + 1,
+    target: 29800000,
+    terkumpul: i < 15 ? 14959000 : 0, // Simplified chart data
+    terpenuhi: false,
+  })),
+};
+
+export const allPrograms = [takjilData, sahurData, snackData, kurmaData, airData, bisyarohData];
 
 // Data Infaq harian
 export const infaqData = {
@@ -138,4 +189,10 @@ export const formatCurrency = (amount) => {
     minimumFractionDigits: 0,
     maximumFractionDigits: 0,
   }).format(amount);
+};
+
+// Format currency in millions (juta)
+export const formatCurrencyJuta = (amount) => {
+  const millions = amount / 1000000;
+  return `Rp ${millions.toFixed(1)} juta`;
 };

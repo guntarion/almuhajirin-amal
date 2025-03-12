@@ -4,10 +4,10 @@
 // Digunakan di halaman dashboard donasi
 
 import React from 'react';
-import { getIconComponent } from '@/data/programs';
+import { getIconComponent, formatCurrency } from '@/data/programs';
 import styles from './ProgramCard.module.css';
 
-const ProgramCard = ({ program, onClick }) => {
+const ProgramCard = ({ program, onClick, formatValue }) => {
   const IconComponent = getIconComponent(program.icon);
 
   return (
@@ -23,17 +23,27 @@ const ProgramCard = ({ program, onClick }) => {
         </div>
         <div className={styles.stats}>
           <span>
-            {program.nama === 'Tadarrus'
+            {program.icon === 'coins'
+              ? `${formatValue ? formatValue(program.terkumpul) : formatCurrency(program.terkumpul)} / ${
+                  formatValue ? formatValue(program.totalKebutuhan) : formatCurrency(program.totalKebutuhan)
+                }`
+              : program.nama === 'Tadarrus'
               ? `${program.terkumpul}/${program.totalKebutuhan} hari`
+              : program.nama === 'Kebutuhan Kurma'
+              ? `${program.terkumpul}/${program.totalKebutuhan} kg`
+              : program.nama === 'Kebutuhan Air Mineral'
+              ? `${program.terkumpul}/${program.totalKebutuhan} dus`
               : `${program.terkumpul}/${program.totalKebutuhan} porsi`}
           </span>
           <span>{program.progress}%</span>
         </div>
       </div>
 
-      <button className={styles.detailButton} onClick={onClick}>
-        Detail
-      </button>
+      {(program.nama === 'Ifthar (Berbuka)' || program.nama === 'Qiyamul Lail (Sahur)' || program.nama === 'Tadarrus') && (
+        <button className={styles.detailButton} onClick={onClick}>
+          Detail
+        </button>
+      )}
     </div>
   );
 };
