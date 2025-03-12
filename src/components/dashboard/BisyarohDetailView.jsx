@@ -36,8 +36,8 @@ const BisyarohDetailView = ({ data }) => {
       <div className={styles.warningSection}>
         <AlertTriangle className={styles.warningIcon} size={24} />
         <p>
-          Masih dibutuhkan <strong>{formatCurrencyJuta(data.totalKebutuhan - data.terkumpul)}</strong> untuk memenuhi kebutuhan bisyaroh ustadz, imam,
-          dan petugas masjid.
+          Masih dibutuhkan <strong>{formatCurrencyJuta(data.totalKebutuhan - data.terkumpul)}</strong> untuk memenuhi kebutuhan operasional ibadah
+          ramadhan.
         </p>
       </div>
 

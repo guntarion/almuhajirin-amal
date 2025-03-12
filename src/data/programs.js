@@ -98,7 +98,7 @@ export const airData = {
 
 // Data Bisyaroh
 export const bisyarohData = {
-  nama: 'Bisyaroh (Ustadz, Imam, Petugas)',
+  nama: 'Operasional Peribadatan',
   icon: 'coins',
   color: '#9333EA', // text-purple-600
   lightColor: '#F3E8FF', // bg-purple-100
