@@ -18,7 +18,7 @@ const TVProgresDonasiWidget = ({ program, formatValue }) => {
   const color = program?.color || defaultColor;
   const bgColor = program?.bgColor || defaultBgColor;
   const borderColor = program?.borderColor || defaultBorderColor;
-  const progress = program?.progress || 0;
+  const progress = Number(program?.progress || 0);
   const nama = program?.nama || 'Program';
   const terkumpul = program?.terkumpul || 0;
   const totalTarget = program?.totalTarget || 0;
@@ -73,7 +73,7 @@ const TVProgresDonasiWidget = ({ program, formatValue }) => {
           <span className={styles.title}>{nama}</span>
         </div>
         <div className={styles.progressPercentage}>
-          <span className={styles.percentCounter}>{progress.toFixed(2)}%</span>
+          <span className={styles.percentCounter}>{Number(progress).toFixed(2)}%</span>
         </div>
       </div>
 

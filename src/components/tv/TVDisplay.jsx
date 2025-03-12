@@ -6,14 +6,13 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import TVTerimaKasihWidget from './TVTerimaKasihWidget';
+import TVProgramRotation from './TVProgramRotation';
 import TVDonaturTerkini from './TVDonaturTerkini';
 import TVInfaqHarianChart from './TVInfaqHarianChart';
 import TVAjakanDonasi from './TVAjakanDonasi';
-import TVProgresDonasiWidget from './TVProgresDonasiWidget';
 import TVPhotoSlideshow from './TVPhotoSlideshow';
 import { infaqHarian } from '@/data/infaq';
 import { tvDisplayConfig } from '@/data/tvConfig';
-import { takjilData, sahurData, snackData, infaqTotalData, getIconComponent, formatCurrency } from '@/data/programs';
 import styles from './TVDisplay.module.css';
 
 const TVDisplay = () => {
@@ -21,45 +20,6 @@ const TVDisplay = () => {
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
   const [currentDay] = useState(tvDisplayConfig.currentDay);
-  const [currentProgramIndex, setCurrentProgramIndex] = useState(0);
-
-  // Data Program Donasi
-  const programData = [
-    {
-      ...takjilData,
-      totalTarget: takjilData.totalKebutuhan,
-      bgColor: `${takjilData.color}1a`,
-      borderColor: `${takjilData.color}80`,
-      icon: getIconComponent(takjilData.icon),
-    },
-    {
-      ...sahurData,
-      totalTarget: sahurData.totalKebutuhan,
-      bgColor: `${sahurData.color}1a`,
-      borderColor: `${sahurData.color}80`,
-      icon: getIconComponent(sahurData.icon),
-    },
-    {
-      ...snackData,
-      totalTarget: snackData.totalKebutuhan,
-      bgColor: `${snackData.color}1a`,
-      borderColor: `${snackData.color}80`,
-      icon: getIconComponent(snackData.icon),
-    },
-    {
-      ...infaqTotalData,
-      nama: 'Infaq',
-      totalTarget: infaqTotalData.totalRupiahKebutuhan,
-      terkumpul: infaqTotalData.totalRupiahPemasukan,
-      progress: infaqTotalData.prosenPencapaian,
-      color: '#EC4899',
-      bgColor: 'rgba(236, 72, 153, 0.1)',
-      borderColor: 'rgba(236, 72, 153, 0.5)',
-      icon: getIconComponent('coins'),
-      format: 'currency',
-    },
-  ];
-
   // Efek untuk update waktu
   useEffect(() => {
     const updateDateTime = () => {
@@ -82,15 +42,6 @@ const TVDisplay = () => {
     const interval = setInterval(updateDateTime, 1000);
     return () => clearInterval(interval);
   }, []);
-
-  // Efek untuk rotasi program donasi setiap 5 detik
-  useEffect(() => {
-    const rotationInterval = setInterval(() => {
-      setCurrentProgramIndex((prevIndex) => (prevIndex + 1) % programData.length);
-    }, 5000);
-
-    return () => clearInterval(rotationInterval);
-  }, [programData.length]);
 
   // No need for section rotation effect
 
@@ -128,23 +79,8 @@ const TVDisplay = () => {
 
           {/* Progress Bar Charts - Featured Program Only */}
           <div className={styles.progressSection}>
-            <h3 className={styles.sectionTitle}>Progress Donasi</h3>
-            <div className={styles.programList}>
-              <TVProgresDonasiWidget
-                key={currentProgramIndex}
-                program={programData[currentProgramIndex]}
-                formatValue={programData[currentProgramIndex].format === 'currency' ? formatCurrency : undefined}
-              />
-              <div className={styles.indicatorContainer}>
-                {programData.map((_, index) => (
-                  <div
-                    key={index}
-                    className={`${styles.indicator} ${index === currentProgramIndex ? styles.indicatorActive : ''}`}
-                    style={{ backgroundColor: index === currentProgramIndex ? programData[index].color : '#CBD5E0' }}
-                  ></div>
-                ))}
-              </div>
-            </div>
+            <h3 className={styles.sectionTitle}>Progress Program Donasi</h3>
+            <TVProgramRotation />
           </div>
         </div>
 
