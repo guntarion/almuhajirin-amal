@@ -102,13 +102,13 @@ export const bisyarohData = {
   icon: 'coins',
   color: '#9333EA', // text-purple-600
   lightColor: '#F3E8FF', // bg-purple-100
-  progress: ((14959000 / 29800000) * 100).toFixed(2), // Calculate percentage automatically
+  progress: ((18959000 / 29800000) * 100).toFixed(2), // Calculate percentage automatically
   totalKebutuhan: 29800000,
-  terkumpul: 14959000,
+  terkumpul: 18959000,
   chartData: Array.from({ length: 30 }, (_, i) => ({
     hari: i + 1,
     target: 29800000,
-    terkumpul: i < 15 ? 14959000 : 0, // Simplified chart data
+    terkumpul: i < 15 ? 18959000 : 0, // Simplified chart data
     terpenuhi: false,
   })),
 };
@@ -121,9 +121,9 @@ export const infaqData = {
   icon: 'coins', // Nama icon dari lucide-react
   color: '#EC4899', // text-pink-500
   lightColor: '#FCE7F3', // bg-pink-100
-  progress: 37, // (11/30) * 100
+  progress: 59, // (11/30) * 100
   totalKebutuhan: 30, // 30 hari
-  terkumpul: 12, // hari ke-11 - mengikuti jumlah hari perolehan
+  terkumpul: 13,
   chartData: [
     { hari: 1, jumlah: 100000 },
     { hari: 2, jumlah: 900000 },
@@ -137,6 +137,7 @@ export const infaqData = {
     { hari: 10, jumlah: 500000 },
     { hari: 11, jumlah: 650000 },
     { hari: 12, jumlah: 650000 },
+    { hari: 13, jumlah: 650000 },
   ],
 };
 
@@ -147,11 +148,11 @@ export const infaqTotalData = {
   color: '#EC4899', // text-pink-500
   lightColor: '#FCE7F3', // bg-pink-100
   totalRupiahKebutuhan: 132600000,
-  totalRupiahPemasukan: 70974500,
-  totalRupiahPengeluaran: 63392482,
-  selisihKekurangan: -61625500,
-  prosenPencapaian: 53.52,
-  statusSaldo: 7582018,
+  totalRupiahPemasukan: 78219500,
+  totalRupiahPengeluaran: 63987482,
+  selisihKekurangan: -54380500,
+  prosenPencapaian: 58.98,
+  statusSaldo: 14232018,
 };
 
 // Data gabungan untuk overview chart

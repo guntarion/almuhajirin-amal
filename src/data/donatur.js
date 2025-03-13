@@ -2,11 +2,6 @@
 // Data donatur untuk TV Display
 
 export const donaturList = [
-  { nama: 'S**** W*****', program: 'Tarhib', jumlah: 300000 },
-  { nama: 'A***', program: 'Takjil', jumlah: 500000 },
-  { nama: 'Hamba Allah #1', program: 'Khataman Tadarus', jumlah: 750000 },
-  { nama: 'A***** B******', program: 'Takjil', jumlah: 300000 },
-  { nama: 'S********', program: 'Takjil', jumlah: 100000 },
   { nama: 'A**** F****', program: 'Takjil', jumlah: 300000 },
   { nama: 'A****** A**** H*****', program: 'Takjil', jumlah: 500000 },
   { nama: 'A**** B******', program: 'Takjil', jumlah: 2000000 },
@@ -35,4 +30,11 @@ export const donaturList = [
   { nama: 'B* S******* d** B* B***', program: 'Takjil', jumlah: 100000 },
   { nama: 'A* F****** T***** U*****', program: 'Kurma 3 kg 5 dus', jumlah: 250000 },
   { nama: 'H**** C**** H**** T*******', program: 'Tadarrus', jumlah: 350000 },
+  { nama: 'R**** R*****', program: 'Infaq Ramadhan', jumlah: 4000000 },
+  { nama: 'B****', program: 'Air Mineral 10 dus', jumlah: 245000 },
+  { nama: 'A****', program: 'Infaq Ramadhan', jumlah: 500000 },
+  { nama: 'Hj. S********** E*******', program: 'Infaq Ramadhan', jumlah: 500000 },
+  { nama: 'Kel. T*********', program: 'Infaq Ramadhan', jumlah: 100000 },
+  { nama: 'S****** A*****', program: 'Infaq Ramadhan', jumlah: 1000000 },
+  { nama: 'FNC Waru', program: 'Infaq Ramadhan', jumlah: 250000 },
 ];
