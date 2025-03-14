@@ -56,9 +56,12 @@ const TVDisplay = () => {
               <Image src='/logo-yamr.png' alt='Al Muhajirin' width={80} height={80} className={styles.logo} />
             </div>
             <div className={styles.titleWrapper}>
-              <h1 className={styles.headerTitle}>Dashboard Donasi Ramadhan</h1>
+              <h1 className={styles.headerTitle}>
+                {tvDisplayConfig.rekening.bank}: {tvDisplayConfig.rekening.nomor}
+              </h1>
+
               <h2 className={styles.headerSubtitle}>
-                {tvDisplayConfig.masjidName} • Ramadhan {tvDisplayConfig.tahunHijriah}
+                a.n. {tvDisplayConfig.rekening.atasNama} Konfirmasi: {tvDisplayConfig.kontak.whatsapp} (WhatsApp)
               </h2>
             </div>
           </div>
@@ -71,40 +74,45 @@ const TVDisplay = () => {
       </div>
 
       {/* Main Content with 3-column layout for better TV display */}
-      <div className={styles.mainContent}>
-        {/* Left Column - Thank You and Progress */}
-        <div className={styles.leftColumn}>
-          {/* Ucapan Terima Kasih Widget - Compact Version */}
-          <TVTerimaKasihWidget />
+      {/* Full-width Terima Kasih Widget */}
+      <div className={styles.fullWidthSection}>
+        <TVTerimaKasihWidget />
+      </div>
 
+      {/* Main Content with 3-column layout for better TV display */}
+      <div className={styles.mainContent}>
+        {/* Left Column - Progress and Ajakan Donasi */}
+        <div className={styles.leftColumn}>
           {/* Progress Bar Charts - Featured Program Only */}
           <div className={styles.progressSection}>
             <h3 className={styles.sectionTitle}>Progress Program Donasi</h3>
             <TVProgramRotation />
           </div>
+
+          {/* Compact Ajakan Donasi */}
+          {/* <div className={styles.compactAjakanDonasiContainer}>
+            <TVAjakanDonasi />
+          </div> */}
         </div>
 
-        {/* Middle Column - Infaq Chart and Photos */}
+        {/* Middle Column - Photos */}
         <div className={styles.middleColumn}>
-          {/* Chart Infaq Harian with Reduced Height */}
-          <TVInfaqHarianChart infaqHarian={infaqHarian} />
-
           {/* Photo Slideshow */}
           <div className={styles.slideshowSection}>
             <TVPhotoSlideshow />
           </div>
         </div>
 
-        {/* Right Column - Donors List and Donation Info */}
+        {/* Right Column - Donors List and Infaq Chart */}
         <div className={styles.rightColumn}>
-          {/* Donatur Terkini - With reduced height */}
+          {/* Donatur Terkini */}
           <div className={styles.donaturTerkiniContainer}>
             <TVDonaturTerkini />
           </div>
 
-          {/* Ajakan Donasi */}
-          <div className={styles.ajakanDonasiContainer}>
-            <TVAjakanDonasi />
+          {/* Infaq Harian Chart */}
+          <div className={styles.infaqChartContainer}>
+            <TVInfaqHarianChart infaqHarian={infaqHarian} />
           </div>
         </div>
       </div>

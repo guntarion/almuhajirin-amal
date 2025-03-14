@@ -2,24 +2,25 @@
 /* CSS Module for TVAjakanDonasi component */
 
 .container {
-  background: linear-gradient(to right, #059669, #2563eb); /* from-green-600 to-blue-600 */
-  border-radius: 0.75rem; /* rounded-xl */
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
-  padding: 1.5rem; /* p-6 */
+  background: linear-gradient(to right, #059669, #2563eb);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
   color: white;
   animation: pulse 4s ease-in-out infinite;
+  height: 100%; /* Take full height of container */
 }
 
 .title {
-  font-size: 1.1rem; /* text-2xl */
-  font-weight: 400; /* font-bold */
-  margin-bottom: 0.25rem; /* mb-1 */
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 0.25rem;
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem; /* space-y-1 */
+  gap: 0.25rem;
 }
 
 .row {
@@ -28,32 +29,33 @@
 }
 
 .icon {
-  width: 1.5rem; /* w-6 */
-  height: 1.5rem; /* h-6 */
-  margin-right: 0.5rem; /* mr-2 */
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.5rem;
 }
 
 .text {
-  font-size: 0.95rem; /* text-xl */
+  font-size: 0.875rem;
 }
 
 .label {
-  opacity: 0.9; /* opacity-90 */
+  opacity: 0.9;
 }
 
 .value {
-  font-weight: 600; /* font-semibold */
+  font-weight: 600;
 }
 
 .accountName {
-  font-size: 0.95rem; /* text-xl */
+  font-size: 0.875rem;
 }
 
 .footer {
-  margin-top: 0.25rem; /* mt-1 */
+  margin-top: 0.25rem;
   font-style: italic;
-  font-size: 0.85rem; /* text-lg */
-  opacity: 0.9; /* opacity-90 */
+  font-size: 0.75rem;
+  opacity: 0.9;
+  display: none; /* Hide in compact mode */
 }
 
 @keyframes pulse {

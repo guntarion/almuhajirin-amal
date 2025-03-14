@@ -85,40 +85,63 @@
   font-size: 1.1rem; /* Reduced from 1.25rem */
 }
 
+/* Full-width section for Terima Kasih Widget */
+.fullWidthSection {
+  padding: 0.75rem 1rem;
+  width: 100%;
+}
+
 .mainContent {
-  flex: 1; /* Take remaining space */
-  padding: 0.75rem 1rem; /* Reduced padding */
+  flex: 1;
+  padding: 0 1rem 0.75rem 1rem;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
-  gap: 1rem; /* Reduced from 1.5rem */
-  height: calc(88vh - 0.75rem); /* Header is 12vh, so this ensures it fills the screen */
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  height: calc(75vh - 1.5rem); /* Reduced height to accommodate full-width section */
   overflow: hidden;
 }
 
-.leftColumn,
-.middleColumn,
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow: hidden;
+  height: 100%;
+  flex: 1;
+}
+
+.middleColumn {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+  flex: 1;
+}
+
 .rightColumn {
   display: flex;
   flex-direction: column;
-  gap: 1rem; /* Reduced from 1.5rem and 2rem */
+  gap: 1rem;
   overflow: hidden;
   height: 100%;
+  flex: 1;
 }
 
 .progressSection {
   background-color: white;
-  border-radius: 0.75rem; /* rounded-xl */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Lighter shadow */
-  padding: 1rem; /* Reduced from 1.5rem */
-  height: 180px; /* Fixed height instead of flex: 1 */
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  height: 45%; /* Take 45% of column height */
   display: flex;
   flex-direction: column;
+  margin-bottom: 1rem;
 }
 
 .sectionTitle {
-  font-size: 1.3rem; /* Reduced from 1.5rem */
-  font-weight: 700; /* font-bold */
-  margin-bottom: 0.5rem; /* mb-2 */
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 }
 
 .programList {
@@ -128,39 +151,48 @@
 }
 
 .slideshowSection {
-  flex: 1; /* Take remaining space */
+  flex: 1;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .indicatorContainer {
   display: flex;
   justify-content: center;
-  gap: 0.4rem; /* gap-1.5 */
-  margin-top: 0.75rem; /* mt-3 */
+  gap: 0.4rem;
+  margin-top: 0.75rem;
 }
 
 .indicator {
-  width: 0.6rem; /* Reduced from 0.75rem */
-  height: 0.6rem; /* Reduced from 0.75rem */
-  border-radius: 50%; /* rounded-full */
-  background-color: #cbd5e0; /* gray-400 */
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background-color: #cbd5e0;
   transition: all 0.3s ease;
 }
 
 .indicatorActive {
-  width: 1.2rem; /* Reduced from 1.5rem */
-  border-radius: 9999px; /* elongated */
+  width: 1.2rem;
+  border-radius: 9999px;
 }
 
-/* New styles for rotating outer container */
 .donaturTerkiniContainer {
-  height: 45%; /* Take 45% of right column height */
+  height: 45%;
   margin-bottom: 1rem;
 }
 
-.ajakanDonasiContainer {
-  height: 52%; /* Take 52% of right column height */
+.infaqChartContainer {
+  height: 52%;
+}
+
+/* Compact style for Ajakan Donasi */
+.compactAjakanDonasiContainer {
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 0.75rem;
+  height: 52%; /* Match height with other sections */
 }
 
 /* Animation keyframes */

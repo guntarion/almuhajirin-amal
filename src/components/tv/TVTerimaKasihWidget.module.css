@@ -5,46 +5,53 @@
   background: linear-gradient(90deg, #10b981, #3b82f6, #10b981);
   background-size: 200% 200%;
   animation: gradientFlow 15s ease infinite;
-  border-radius: 0.75rem; /* rounded-xl */
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
-  padding: 1.5rem; /* p-6 */
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  padding: 1.25rem 2rem 2rem; /* First value (2.25rem) controls top padding */
   color: white;
   overflow: hidden;
   position: relative;
+  height: 240px; /* Increased height for better text visibility */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .backgroundIcon {
   position: absolute;
-  top: 0;
-  right: 0;
-  opacity: 0.2;
+  top: -2rem;
+  right: -2rem;
+  opacity: 0.15;
+  transform: rotate(10deg);
 }
 
 .backgroundHeartIcon {
-  width: 10rem; /* w-40 */
-  height: 10rem; /* h-40 */
+  width: 16rem;
+  height: 16rem;
 }
 
 .header {
   display: flex;
   align-items: center;
-  margin-bottom: 1rem; /* mb-4 */
+  margin-top: 0.2rem;
+  margin-bottom: 1.5rem; /* Increased margin for better spacing */
 }
 
 .headerIcon {
-  width: 2rem; /* w-8 */
-  height: 2rem; /* h-8 */
-  margin-right: 0.75rem; /* mr-3 */
-  color: #f9a8d4; /* text-pink-300 */
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-right: 1rem;
+  color: #f9a8d4;
 }
 
 .title {
-  font-weight: 700; /* font-bold */
-  font-size: 1.2rem; /* text-2xl */
+  font-weight: 700;
+  font-size: 2rem;
 }
 
 .messageContainer {
-  min-height: 100px;
+  min-height: 120px; /* Increased min-height */
+  margin-bottom: 1.5rem; /* Increased margin below message */
 }
 
 .fadeIn {
@@ -53,8 +60,9 @@
 }
 
 .message {
-  font-size: 0.95rem; /* text-xl */
-  line-height: 1.625; /* leading-relaxed */
+  font-size: 1.9rem;
+  line-height: 1.2; /* Slightly increased line height */
+  max-width: 95%;
 }
 
 .name {
