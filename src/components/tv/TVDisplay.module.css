@@ -177,13 +177,9 @@
   border-radius: 9999px;
 }
 
-.donaturTerkiniContainer {
-  height: 45%;
-  margin-bottom: 1rem;
-}
-
-.infaqChartContainer {
-  height: 52%;
+.rotatingComponentContainer {
+  height: 100%; /* Take full height of the right column */
+  animation: fadeInOut 0.5s ease-in-out;
 }
 
 /* Compact style for Ajakan Donasi */

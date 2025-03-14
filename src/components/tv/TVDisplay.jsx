@@ -20,6 +20,19 @@ const TVDisplay = () => {
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
   const [currentDay] = useState(tvDisplayConfig.currentDay);
+  const [showDonaturTerkini, setShowDonaturTerkini] = useState(true);
+
+  // Effect for component rotation between Donatur Terkini and Infaq Harian
+  useEffect(() => {
+    const interval = setInterval(
+      () => {
+        setShowDonaturTerkini((prev) => !prev);
+      },
+      showDonaturTerkini ? 15000 : 5000
+    ); // 15 seconds for Donatur Terkini, 5 seconds for Infaq Harian
+
+    return () => clearInterval(interval);
+  }, [showDonaturTerkini]);
   // Efek untuk update waktu
   useEffect(() => {
     const updateDateTime = () => {
@@ -105,14 +118,9 @@ const TVDisplay = () => {
 
         {/* Right Column - Donors List and Infaq Chart */}
         <div className={styles.rightColumn}>
-          {/* Donatur Terkini */}
-          <div className={styles.donaturTerkiniContainer}>
-            <TVDonaturTerkini />
-          </div>
-
-          {/* Infaq Harian Chart */}
-          <div className={styles.infaqChartContainer}>
-            <TVInfaqHarianChart infaqHarian={infaqHarian} />
+          {/* Rotating container for Donatur Terkini and Infaq Harian */}
+          <div className={styles.rotatingComponentContainer}>
+            {showDonaturTerkini ? <TVDonaturTerkini /> : <TVInfaqHarianChart infaqHarian={infaqHarian} />}
           </div>
         </div>
       </div>
