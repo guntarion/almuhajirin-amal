@@ -2,7 +2,7 @@
 // Konfigurasi untuk TV Display yang dapat diedit
 
 export const tvDisplayConfig = {
-  currentDay: 13, // Hari ke-x Ramadhan
+  currentDay: 14, // Hari ke-x Ramadhan
   masjidName: 'Masjid Al Muhajirin Rewwin',
   tahunHijriah: '1446H',
   rekening: {

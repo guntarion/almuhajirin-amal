@@ -177,4 +177,14 @@ export const ucapanDoaList = [
     program: 'Infaq Ramadhan',
     doa: 'Semoga Allah membalas kebaikannya dengan surga yang mengalir di bawahnya sungai-sungai',
   },
+  {
+    nama: ' Alan Gumelar S. Darkun',
+    program: 'Infaq Qiyamul Lail',
+    doa: 'Semoga selalu dilimpahi keberkahan dalam setiap nafas dan langkah kehidupan',
+  },
+  {
+    nama: ' H. Oktio Hari',
+    program: 'Infaq Ramadhan',
+    doa: 'Semoga Allah menjadikan sedekahnya sebagai pelindung dari api neraka',
+  },
 ];
