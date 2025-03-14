@@ -46,10 +46,10 @@ const TVDonaturTerkini = () => {
 
   return (
     <div className={styles.container}>
-      <h3 className={styles.title}>
+      {/* <h3 className={styles.title}>
         <Star className={styles.starIcon} />
         Donatur Terkini
-      </h3>
+      </h3> */}
 
       <div className={styles.donaturList}>
         <div className={styles.donaturItems} key={currentDonaturIndex}>
