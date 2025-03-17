@@ -123,7 +123,7 @@ export const infaqData = {
   lightColor: '#FCE7F3', // bg-pink-100
   progress: 59, // (11/30) * 100
   totalKebutuhan: 30, // 30 hari
-  terkumpul: 14,
+  terkumpul: 17,
   chartData: [
     { hari: 1, jumlah: 100000 },
     { hari: 2, jumlah: 900000 },
@@ -139,6 +139,9 @@ export const infaqData = {
     { hari: 12, jumlah: 650000 },
     { hari: 13, jumlah: 650000 },
     { hari: 14, jumlah: 550000 },
+    { hari: 15, jumlah: 600000 },
+    { hari: 16, jumlah: 500000 },
+    { hari: 17, jumlah: 500000 },
   ],
 };
 
@@ -149,11 +152,11 @@ export const infaqTotalData = {
   color: '#EC4899', // text-pink-500
   lightColor: '#FCE7F3', // bg-pink-100
   totalRupiahKebutuhan: 132600000,
-  totalRupiahPemasukan: 80619500,
-  totalRupiahPengeluaran: 65835482,
-  selisihKekurangan: -51980500,
-  prosenPencapaian: 60.79,
-  statusSaldo: 14784018,
+  totalRupiahPemasukan: 82569500,
+  totalRupiahPengeluaran: 69068482,
+  selisihKekurangan: -50030500,
+  prosenPencapaian: 62.26,
+  statusSaldo: 13501018,
 };
 
 // Data gabungan untuk overview chart

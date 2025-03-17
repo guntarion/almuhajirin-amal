@@ -15,4 +15,7 @@ export const infaqHarian = [
   { hari: 12, jumlah: 650000 },
   { hari: 13, jumlah: 650000 },
   { hari: 14, jumlah: 550000 },
+  { hari: 15, jumlah: 600000 },
+  { hari: 16, jumlah: 500000 },
+  { hari: 17, jumlah: 500000 },
 ];
