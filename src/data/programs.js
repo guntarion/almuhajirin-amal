@@ -102,13 +102,13 @@ export const bisyarohData = {
   icon: 'coins',
   color: '#9333EA', // text-purple-600
   lightColor: '#F3E8FF', // bg-purple-100
-  progress: ((18959000 / 29800000) * 100).toFixed(2), // Calculate percentage automatically
+  progress: ((21500000 / 29800000) * 100).toFixed(2), // Calculate percentage automatically
   totalKebutuhan: 29800000,
-  terkumpul: 18959000,
+  terkumpul: 21500000,
   chartData: Array.from({ length: 30 }, (_, i) => ({
     hari: i + 1,
     target: 29800000,
-    terkumpul: i < 15 ? 18959000 : 0, // Simplified chart data
+    terkumpul: i < 15 ? 21500000 : 0, // Simplified chart data
     terpenuhi: false,
   })),
 };
@@ -152,11 +152,11 @@ export const infaqTotalData = {
   color: '#EC4899', // text-pink-500
   lightColor: '#FCE7F3', // bg-pink-100
   totalRupiahKebutuhan: 132600000,
-  totalRupiahPemasukan: 82569500,
-  totalRupiahPengeluaran: 69068482,
-  selisihKekurangan: -50030500,
-  prosenPencapaian: 62.26,
-  statusSaldo: 13501018,
+  totalRupiahPemasukan: 89995500,
+  totalRupiahPengeluaran: 75629482,
+  selisihKekurangan: -42604500,
+  prosenPencapaian: 67.86,
+  statusSaldo: 14366018,
 };
 
 // Data gabungan untuk overview chart

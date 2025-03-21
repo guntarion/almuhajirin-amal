@@ -43,12 +43,12 @@ export const ucapanDoaList = [
     doa: 'Semoga segala urusan dimudahkan dan diberikan perlindungan dari segala kesulitan',
   },
   {
-    nama: ' Rizaldy Choirul Ardiansyah',
+    nama: ' ',
     program: 'Takjil',
     doa: 'Semoga anak-anaknya tumbuh menjadi generasi Qurani yang berbakti kepada orang tua',
   },
   {
-    nama: ' Iwan Efrulwan',
+    nama: ' ',
     program: 'Takjil',
     doa: 'Semoga dijauhkan dari segala musibah dan selalu dalam lindungan Allah SWT',
   },
@@ -63,12 +63,12 @@ export const ucapanDoaList = [
     doa: 'Semoga keluarganya selalu dalam keadaan sehat walafiat dan dilimpahi kebahagiaan',
   },
   {
-    nama: ' Bpk. Kemas Adil Mastjik',
+    nama: ' ',
     program: 'Kurma 5 Kg',
     doa: 'Semoga Allah membalas kebaikan dengan kemudahan dalam setiap langkah kehidupan',
   },
   {
-    nama: ' Bpk. Zainuri',
+    nama: ' ',
     program: 'Air Mineral',
     doa: 'Semoga dianugerahi ketenangan hati dan keberkahan umur hingga akhir hayat',
   },
@@ -133,12 +133,12 @@ export const ucapanDoaList = [
     doa: 'Semoga diberikan ketentraman hidup dan keluarga yang sakinah',
   },
   {
-    nama: ' Al Fakhri Travel Umroh',
+    nama: ' ',
     program: 'Kurma 3 kg 5 dus',
     doa: 'Semoga selalu berada dalam lindungan dan rahmat Allah SWT',
   },
   {
-    nama: ' H. Cahyo Husni Tamrin',
+    nama: ' ',
     program: 'Tadarrus',
     doa: 'Semoga Allah mencurahkan kasih sayang-Nya kepada keluarga dan keturunannya',
   },
@@ -158,7 +158,7 @@ export const ucapanDoaList = [
     doa: 'Semoga harta yang disedekahkan menjadi pemberat timbangan kebaikan di akhirat',
   },
   {
-    nama: ' Hj Soemiratning Effendi',
+    nama: ' ',
     program: 'Infaq Ramadhan',
     doa: 'Semoga diberikan kekuatan iman dan keteguhan dalam menghadapi ujian hidup',
   },
@@ -186,5 +186,35 @@ export const ucapanDoaList = [
     nama: ' H. Oktio Hari',
     program: 'Infaq Ramadhan',
     doa: 'Semoga Allah menjadikan sedekahnya sebagai pelindung dari api neraka',
+  },
+  {
+    nama: ' Bpk. Djoko Sunarto',
+    program: 'Infaq Ramadhan',
+    doa: 'Semoga keluarganya selalu dalam naungan rahmat dan kasih sayang Allah SWT',
+  },
+  {
+    nama: ' Ibu Novi Ratna Kusuma',
+    program: 'Infaq Ifthar',
+    doa: 'Semoga diberkahi dalam setiap langkah dan keputusan hidupnya',
+  },
+  {
+    nama: ' Bpk. Edi Mulyono',
+    program: 'Infaq Ifthar',
+    doa: 'Semoga Allah melipatgandakan pahalanya hingga 700 kali lipat',
+  },
+  {
+    nama: ' Irfan',
+    program: 'Infaq Ifthar',
+    doa: 'Semoga selalu diberikan keluasan dan keberkahan dalam rezeki yang halal',
+  },
+  {
+    nama: ' Ibu Nunung Sri Puguh',
+    program: 'Infaq Ifthar',
+    doa: 'Semoga Allah menjadikan keturunannya sebagai qurrota ayun (penyejuk hati)',
+  },
+  {
+    nama: ' Ibu Andy Sulistyono',
+    program: 'Infaq Ramadhan',
+    doa: 'Semoga dimudahkan dalam menggapai cita-cita dunia dan akhirat',
   },
 ];
