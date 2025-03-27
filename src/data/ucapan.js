@@ -217,4 +217,24 @@ export const ucapanDoaList = [
     program: 'Infaq Ramadhan',
     doa: 'Semoga dimudahkan dalam menggapai cita-cita dunia dan akhirat',
   },
+  {
+    nama: ' Asmara Tambunan',
+    program: 'Infaq Ramadhan',
+    doa: 'Semoga diberi kekuatan iman dan kesabaran dalam menghadapi ujian hidup',
+  },
+  {
+    nama: ' Bu Lukman',
+    program: 'Infaq Ramadhan',
+    doa: 'Semoga selalu dalam lindungan Allah dimanapun berada',
+  },
+  {
+    nama: ' Bu Bambang Suryono',
+    program: 'Infaq Ramadhan',
+    doa: 'Semoga Allah mengabulkan segala hajat dan keinginan baiknya',
+  },
+  {
+    nama: ' Ibu Imam Moeryono',
+    program: 'Infaq Ramadhan',
+    doa: 'Semoga diberikan umur yang barokah dan husnul khotimah',
+  },
 ];

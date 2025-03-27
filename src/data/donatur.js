@@ -45,4 +45,8 @@ export const donaturList = [
   { nama: 'I****', program: 'Infaq Ifthar', jumlah: 100000 },
   { nama: 'N***** S** P*****', program: 'Infaq Ifthar', jumlah: 650000 },
   { nama: 'A**** S********', program: 'Infaq Ramadhan', jumlah: 1000000 },
+  { nama: 'A***** T*******', program: 'Infaq Ramadhan', jumlah: 100000 },
+  { nama: 'Bu L*****', program: 'Infaq Ramadhan', jumlah: 200000 },
+  { nama: 'Bu B****** S******', program: 'Infaq Ramadhan', jumlah: 100000 },
+  { nama: 'Bu I*** M*******', program: 'Infaq Ramadhan', jumlah: 1200000 },
 ];

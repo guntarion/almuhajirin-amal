@@ -121,9 +121,9 @@ export const infaqData = {
   icon: 'coins', // Nama icon dari lucide-react
   color: '#EC4899', // text-pink-500
   lightColor: '#FCE7F3', // bg-pink-100
-  progress: 59, // (11/30) * 100
+  progress: 94, // (11/30) * 100
   totalKebutuhan: 30, // 30 hari
-  terkumpul: 17,
+  terkumpul: 27,
   chartData: [
     { hari: 1, jumlah: 100000 },
     { hari: 2, jumlah: 900000 },
@@ -142,6 +142,16 @@ export const infaqData = {
     { hari: 15, jumlah: 600000 },
     { hari: 16, jumlah: 500000 },
     { hari: 17, jumlah: 500000 },
+    { hari: 18, jumlah: 550000 },
+    { hari: 19, jumlah: 550000 },
+    { hari: 20, jumlah: 600000 },
+    { hari: 21, jumlah: 700000 },
+    { hari: 22, jumlah: 400000 },
+    { hari: 23, jumlah: 600000 },
+    { hari: 24, jumlah: 450000 },
+    { hari: 25, jumlah: 650000 },
+    { hari: 26, jumlah: 700000 },
+    { hari: 27, jumlah: 550000 },
   ],
 };
 
@@ -152,11 +162,11 @@ export const infaqTotalData = {
   color: '#EC4899', // text-pink-500
   lightColor: '#FCE7F3', // bg-pink-100
   totalRupiahKebutuhan: 132600000,
-  totalRupiahPemasukan: 89995500,
-  totalRupiahPengeluaran: 75629482,
-  selisihKekurangan: -42604500,
-  prosenPencapaian: 67.86,
-  statusSaldo: 14366018,
+  totalRupiahPemasukan: 95795500,
+  totalRupiahPengeluaran: 94927482,
+  selisihKekurangan: -36804500,
+  prosenPencapaian: 72.24,
+  statusSaldo: 868018,
 };
 
 // Data gabungan untuk overview chart
